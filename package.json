@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "showcase:client": "ng serve showcase -o --port 3000"
+    "showcase:client": "ng serve showcase -o --port 3000",
+    "ng9-business-console:build": "ng build ng9-business-console && npm i dist/ng9-business-console --save-optional",
+    "library:build": "npm run ng9-business-console:build"
   },
   "private": true,
   "dependencies": {
