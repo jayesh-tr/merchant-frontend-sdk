@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 //library
 import { Ng9BusinessConsoleModule } from '@ng9/business-console';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { Ng9BusinessConsoleModule } from '@ng9/business-console';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Ng9BusinessConsoleModule
+    Ng9BusinessConsoleModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
