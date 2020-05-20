@@ -10,7 +10,9 @@
     "e2e": "ng e2e",
     "showcase:client": "ng serve showcase -o --port 4200",
     "ng9-business-console:build": "ng build ng9-business-console && npm i dist/ng9-business-console --save-optional",
-    "library:build": "npm run ng9-business-console:build"
+    "library:build": "npm run ng9-business-console:build",
+    "library:pack": "cd dist/ng9-business-console && npm pack",
+    "library:publish": "cd dist/ng9-business-console && npm publish"
   },
   "private": true,
   "dependencies": {
