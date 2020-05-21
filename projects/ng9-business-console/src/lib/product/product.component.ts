@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from "@angular/material/table";
-import { ProductService } from "./product.service";
+import { ProductService, Datum } from "./product.service";
 
 @Component({
   selector: 'ng9-business-console-product',
@@ -13,6 +13,7 @@ export class ProductComponent implements OnInit {
   public displayedColumns: Array<string>;
   public dataSource: any;
   public network: number;
+  public products: Array<Datum> = [];
   constructor(
     public productService: ProductService
   ) { }
@@ -29,7 +30,10 @@ export class ProductComponent implements OnInit {
       'columnClicked'
     ];
 
-    this.dataSource = this.productService.getProductList();
+    this.products = this.productService.getProductList();
+
+    if (this.products.length > 0)
+      this.dataSource = new MatTableDataSource(this.products);
   }
 }
 
