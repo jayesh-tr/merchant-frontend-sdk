@@ -4,6 +4,7 @@ import { TopNavComponent } from './top-nav/top-nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductComponent } from './product/product.component';
 import { ProductModule } from './product/product.module';
+import { ProductService } from './product/product.service';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { ProductModule } from './product/product.module';
   ],
   imports: [
     MaterialModule,
-    ProductModule
+    ProductModule,
   ],
   exports: [
     FooterComponent,

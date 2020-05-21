@@ -8,3 +8,5 @@ export * from './lib/product/product.module';
 export * from './lib/footer/footer.component';
 export * from './lib/top-nav/top-nav.component';
 export * from './lib/product/product.component';
+
+export * from './lib/product/product.service'

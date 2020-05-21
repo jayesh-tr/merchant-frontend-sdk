@@ -1,7 +1,186 @@
 {
     "pipes": [],
-    "interfaces": [],
-    "injectables": [],
+    "interfaces": [
+        {
+            "name": "Datum",
+            "id": "interface-Datum-86f6dc2bdd42450e137384f6e72c8393",
+            "file": "projects/ng9-business-console/src/lib/product/product.service.ts",
+            "type": "interface",
+            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable()\nexport class ProductService {\n\n  constructor() { }\n\n  getProductList() {\n    let data: Datum[] = [\n      { \"productID\": \"cBvn45paZ7s63nK89CerAKzRfTz5A5Po\", \"businessID\": \"y2beEPTM49El0wXfAwRlzSRYzKcnIBD0\", \"categoryID\": 5, \"tags\": null, \"productName\": \"The laughing man\", \"productDescription\": null, \"creationTimestamp\": \"1562227047\", \"lastUpdateTimestamp\": \"1562227047\", \"productUrl\": \"www.example.com\", \"imageUrl\": \"https://preassets.pumapay.io/product-img/5722eeb527790c397846216f2ab605e1.png\", \"verified\": false, \"usdTotalEarnings\": \"0\", \"eurTotalEarnings\": \"0\", \"jpyTotalEarnings\": \"0\", \"gbpTotalEarnings\": \"0\", \"activeCustomers\": 0, \"numOfBilling\": 15, \"enabled\": true, \"totalEarnings\": 0, \"status\": \"active\" },\n      { \"productID\": \"Ot6gksy3FRuwnDmJzFyxFWZbpl8OHlsh\", \"businessID\": \"y2beEPTM49El0wXfAwRlzSRYzKcnIBD0\", \"categoryID\": 1, \"tags\": null, \"productName\": \"fSingle Payments\", \"productDescription\": null, \"creationTimestamp\": \"1561560334\", \"lastUpdateTimestamp\": \"1561560334\", \"productUrl\": \"www.example.com\", \"imageUrl\": \"https://preassets.pumapay.io/product-img/acdda1217729a6ad377bf9eb912163f0.png\", \"verified\": false, \"usdTotalEarnings\": \"0\", \"eurTotalEarnings\": \"0\", \"jpyTotalEarnings\": \"0\", \"gbpTotalEarnings\": \"0\", \"activeCustomers\": 0, \"numOfBilling\": 6, \"enabled\": true, \"totalEarnings\": 0, \"status\": \"active\" },\n      { \"productID\": \"bW6b1ouyIxlIoiRC5DSB6l869AN4DHZY\", \"businessID\": \"y2beEPTM49El0wXfAwRlzSRYzKcnIBD0\", \"categoryID\": 2, \"tags\": null, \"productName\": \"Test\", \"productDescription\": null, \"creationTimestamp\": \"1563867777\", \"lastUpdateTimestamp\": \"1563867777\", \"productUrl\": \"www.example.com\", \"imageUrl\": \"https://preassets.pumapay.io/product-img/56418aa6cc913e760ae20cc94e6d4ddc.png\", \"verified\": false, \"usdTotalEarnings\": \"0\", \"eurTotalEarnings\": \"0\", \"jpyTotalEarnings\": \"0\", \"gbpTotalEarnings\": \"0\", \"activeCustomers\": 0, \"numOfBilling\": 1, \"enabled\": true, \"totalEarnings\": 0, \"status\": \"active\" },\n      { \"productID\": \"FD26GBeFsQEusFGu4wRIDzVu69H11ndA\", \"businessID\": \"y2beEPTM49El0wXfAwRlzSRYzKcnIBD0\", \"categoryID\": 12, \"tags\": null, \"productName\": \"Kemix\", \"productDescription\": null, \"creationTimestamp\": \"1564384127\", \"lastUpdateTimestamp\": \"1564384127\", \"productUrl\": \"www.example.com\", \"imageUrl\": \"https://preassets.pumapay.io/product-img/68fbfa416c6a277121bb2d57fbe9734d.png\", \"verified\": false, \"usdTotalEarnings\": \"0\", \"eurTotalEarnings\": \"0\", \"jpyTotalEarnings\": \"0\", \"gbpTotalEarnings\": \"0\", \"activeCustomers\": 0, \"numOfBilling\": 0, \"enabled\": true, \"totalEarnings\": 0, \"status\": \"inactive\" },\n      { \"productID\": \"of2NVN70OcAwJFX4VSBX1B5GhI2AEdKT\", \"businessID\": \"y2beEPTM49El0wXfAwRlzSRYzKcnIBD0\", \"categoryID\": 1, \"tags\": null, \"productName\": \"NonKemix\", \"productDescription\": null, \"creationTimestamp\": \"1564384127\", \"lastUpdateTimestamp\": \"1564384127\", \"productUrl\": \"www.example.com\", \"imageUrl\": \"https://preassets.pumapay.io/product-img/78167f7a55843d47ba688eea95048258.png\", \"verified\": false, \"usdTotalEarnings\": \"0\", \"eurTotalEarnings\": \"0\", \"jpyTotalEarnings\": \"0\", \"gbpTotalEarnings\": \"0\", \"activeCustomers\": 0, \"numOfBilling\": 0, \"enabled\": true, \"totalEarnings\": 0, \"status\": \"inactive\" }\n    ];\n    return data;\n  }\n}\n\ninterface Datum {\n  productID: string;\n  businessID: string;\n  categoryID?: number;\n  tags?: any;\n  productName: string;\n  productDescription?: any;\n  creationTimestamp: string;\n  lastUpdateTimestamp: string;\n  productUrl: string;\n  imageUrl: string;\n  verified: boolean;\n  usdTotalEarnings: string;\n  eurTotalEarnings: string;\n  jpyTotalEarnings: string;\n  gbpTotalEarnings: string;\n  activeCustomers: number;\n  numOfBilling: number;\n  enabled: boolean;\n  totalEarnings: number;\n  status: string;\n}\n",
+            "properties": [
+                {
+                    "name": "activeCustomers",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 36
+                },
+                {
+                    "name": "businessID",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "categoryID",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "creationTimestamp",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "enabled",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                },
+                {
+                    "name": "eurTotalEarnings",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "gbpTotalEarnings",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
+                },
+                {
+                    "name": "imageUrl",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "jpyTotalEarnings",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "lastUpdateTimestamp",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "numOfBilling",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                },
+                {
+                    "name": "productDescription",
+                    "type": "any",
+                    "optional": true,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "productID",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "productName",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "productUrl",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "status",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 40
+                },
+                {
+                    "name": "tags",
+                    "type": "any",
+                    "optional": true,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "totalEarnings",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 39
+                },
+                {
+                    "name": "usdTotalEarnings",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "verified",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "ProductService",
+            "id": "injectable-ProductService-86f6dc2bdd42450e137384f6e72c8393",
+            "file": "projects/ng9-business-console/src/lib/product/product.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getProductList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 8
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable()\nexport class ProductService {\n\n  constructor() { }\n\n  getProductList() {\n    let data: Datum[] = [\n      { \"productID\": \"cBvn45paZ7s63nK89CerAKzRfTz5A5Po\", \"businessID\": \"y2beEPTM49El0wXfAwRlzSRYzKcnIBD0\", \"categoryID\": 5, \"tags\": null, \"productName\": \"The laughing man\", \"productDescription\": null, \"creationTimestamp\": \"1562227047\", \"lastUpdateTimestamp\": \"1562227047\", \"productUrl\": \"www.example.com\", \"imageUrl\": \"https://preassets.pumapay.io/product-img/5722eeb527790c397846216f2ab605e1.png\", \"verified\": false, \"usdTotalEarnings\": \"0\", \"eurTotalEarnings\": \"0\", \"jpyTotalEarnings\": \"0\", \"gbpTotalEarnings\": \"0\", \"activeCustomers\": 0, \"numOfBilling\": 15, \"enabled\": true, \"totalEarnings\": 0, \"status\": \"active\" },\n      { \"productID\": \"Ot6gksy3FRuwnDmJzFyxFWZbpl8OHlsh\", \"businessID\": \"y2beEPTM49El0wXfAwRlzSRYzKcnIBD0\", \"categoryID\": 1, \"tags\": null, \"productName\": \"fSingle Payments\", \"productDescription\": null, \"creationTimestamp\": \"1561560334\", \"lastUpdateTimestamp\": \"1561560334\", \"productUrl\": \"www.example.com\", \"imageUrl\": \"https://preassets.pumapay.io/product-img/acdda1217729a6ad377bf9eb912163f0.png\", \"verified\": false, \"usdTotalEarnings\": \"0\", \"eurTotalEarnings\": \"0\", \"jpyTotalEarnings\": \"0\", \"gbpTotalEarnings\": \"0\", \"activeCustomers\": 0, \"numOfBilling\": 6, \"enabled\": true, \"totalEarnings\": 0, \"status\": \"active\" },\n      { \"productID\": \"bW6b1ouyIxlIoiRC5DSB6l869AN4DHZY\", \"businessID\": \"y2beEPTM49El0wXfAwRlzSRYzKcnIBD0\", \"categoryID\": 2, \"tags\": null, \"productName\": \"Test\", \"productDescription\": null, \"creationTimestamp\": \"1563867777\", \"lastUpdateTimestamp\": \"1563867777\", \"productUrl\": \"www.example.com\", \"imageUrl\": \"https://preassets.pumapay.io/product-img/56418aa6cc913e760ae20cc94e6d4ddc.png\", \"verified\": false, \"usdTotalEarnings\": \"0\", \"eurTotalEarnings\": \"0\", \"jpyTotalEarnings\": \"0\", \"gbpTotalEarnings\": \"0\", \"activeCustomers\": 0, \"numOfBilling\": 1, \"enabled\": true, \"totalEarnings\": 0, \"status\": \"active\" },\n      { \"productID\": \"FD26GBeFsQEusFGu4wRIDzVu69H11ndA\", \"businessID\": \"y2beEPTM49El0wXfAwRlzSRYzKcnIBD0\", \"categoryID\": 12, \"tags\": null, \"productName\": \"Kemix\", \"productDescription\": null, \"creationTimestamp\": \"1564384127\", \"lastUpdateTimestamp\": \"1564384127\", \"productUrl\": \"www.example.com\", \"imageUrl\": \"https://preassets.pumapay.io/product-img/68fbfa416c6a277121bb2d57fbe9734d.png\", \"verified\": false, \"usdTotalEarnings\": \"0\", \"eurTotalEarnings\": \"0\", \"jpyTotalEarnings\": \"0\", \"gbpTotalEarnings\": \"0\", \"activeCustomers\": 0, \"numOfBilling\": 0, \"enabled\": true, \"totalEarnings\": 0, \"status\": \"inactive\" },\n      { \"productID\": \"of2NVN70OcAwJFX4VSBX1B5GhI2AEdKT\", \"businessID\": \"y2beEPTM49El0wXfAwRlzSRYzKcnIBD0\", \"categoryID\": 1, \"tags\": null, \"productName\": \"NonKemix\", \"productDescription\": null, \"creationTimestamp\": \"1564384127\", \"lastUpdateTimestamp\": \"1564384127\", \"productUrl\": \"www.example.com\", \"imageUrl\": \"https://preassets.pumapay.io/product-img/78167f7a55843d47ba688eea95048258.png\", \"verified\": false, \"usdTotalEarnings\": \"0\", \"eurTotalEarnings\": \"0\", \"jpyTotalEarnings\": \"0\", \"gbpTotalEarnings\": \"0\", \"activeCustomers\": 0, \"numOfBilling\": 0, \"enabled\": true, \"totalEarnings\": 0, \"status\": \"inactive\" }\n    ];\n    return data;\n  }\n}\n\ninterface Datum {\n  productID: string;\n  businessID: string;\n  categoryID?: number;\n  tags?: any;\n  productName: string;\n  productDescription?: any;\n  creationTimestamp: string;\n  lastUpdateTimestamp: string;\n  productUrl: string;\n  imageUrl: string;\n  verified: boolean;\n  usdTotalEarnings: string;\n  eurTotalEarnings: string;\n  jpyTotalEarnings: string;\n  gbpTotalEarnings: string;\n  activeCustomers: number;\n  numOfBilling: number;\n  enabled: boolean;\n  totalEarnings: number;\n  status: string;\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 4
+            },
+            "type": "injectable"
+        }
+    ],
     "classes": [
         {
             "name": "AppPage",
@@ -39,7 +218,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-a20bc6562da1c0300cb1bcfdcfa5bee3",
+            "id": "component-AppComponent-7b5c57198037400d5372b3cc031a57ad",
             "file": "projects/showcase/src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -60,11 +239,13 @@
             "propertiesClass": [
                 {
                     "name": "title",
-                    "defaultValue": "'showcase'",
-                    "type": "string",
+                    "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 9
+                    "line": 10,
+                    "modifierKind": [
+                        114
+                    ]
                 }
             ],
             "methodsClass": [],
@@ -73,7 +254,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'showcase-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'showcase';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n//import { ProductService } from '@ng9/business-console/lib/product/product.service';\n\n@Component({\n  selector: 'showcase-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  public title: any;\n  constructor(\n    //public productService: ProductService\n  ){\n    //this.title = this.productService.getProductList()\n  }  \n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -82,7 +263,13 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<ng9-business-console-top-nav></ng9-business-console-top-nav>\n<ng9-business-console-footer></ng9-business-console-footer>\n<router-outlet></router-outlet>\n"
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 10
+            },
+            "templateData": "<ng9-business-console-top-nav></ng9-business-console-top-nav>\n<ng9-business-console-footer></ng9-business-console-footer>\n<ng9-business-console-product></ng9-business-console-product>\n<router-outlet></router-outlet>\n"
         },
         {
             "name": "FooterComponent",
@@ -148,6 +335,117 @@
                 "OnInit"
             ],
             "templateData": "<h3>{{ title }}</h3>\n"
+        },
+        {
+            "name": "ProductComponent",
+            "id": "component-ProductComponent-bc3faaa2e3cf613d652a1e6993924a50",
+            "file": "projects/ng9-business-console/src/lib/product/product.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ng9-business-console-product",
+            "styleUrls": [
+                "./product.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./product.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dataSource",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "displayedColumns",
+                    "type": "Array<string>",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "network",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "productService",
+                    "type": "ProductService",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { MatTableDataSource } from \"@angular/material/table\";\nimport { ProductService } from \"./product.service\";\n\n@Component({\n  selector: 'ng9-business-console-product',\n  templateUrl: './product.component.html',\n  styleUrls: ['./product.component.scss']\n})\n\nexport class ProductComponent implements OnInit {\n\n  public displayedColumns: Array<string>;\n  public dataSource: any;\n  public network: number;\n  constructor(\n    public productService: ProductService\n  ) { }\n\n  ngOnInit() {\n    this.displayedColumns = [\n      'status',\n      'productName',\n      'totalEarnings',\n      'activeCustomers',\n      'numOfBilling',\n      'ropstenNetworkOn',\n      'creationTimestamp',\n      'columnClicked'\n    ];\n\n    this.dataSource = this.productService.getProductList();\n  }\n}\n\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".main-container {\n    background-color: #fff;\n    border-radius: 10px;\n    border-width: 1px;\n    padding: 0px;\n    padding-bottom: 50px;\n    margin-bottom: 100px;\n    min-height: 70%;\n    h3,\n    h4 {\n      display: inline;\n      font-size: 18px;\n    }\n  \n    .bm-header {\n      border-bottom: 1px solid #f2f2f2;\n    }\n  \n    .bm-header-col {\n      padding-right: 20px;\n      padding-left: 13px;\n    }\n  \n    .row-margin-top {\n      margin-top: 50px;\n    }\n  \n    .row-table {\n      // overflow-x: scroll;\n      padding: 0 !important;\n    }\n  \n    .row-padding {\n      padding-left: 3.2%;\n      padding-right: 3%;\n      padding-top: 15px;\n      padding-bottom: 5px;\n      margin-right: 0px;\n      margin-left: 0px;\n    }\n  \n    .col-centered {\n      padding-left: 0px;\n      padding-right: 0px;\n      text-align: center;\n    }\n    /* \n    .btn {\n      padding-left: 5%;\n      padding-right: 5%;\n      margin-left: 20px;\n    }\n   */\n  \n    .btn-small {\n      font-size: 13px;\n      padding-left: 10px;\n      padding-right: 10px;\n    }\n  \n    .pull-right {\n      float: right;\n      min-width: 85px;\n      line-height: 15px;\n    }\n  \n    .btn-ordinary {\n      background-color: #556486;\n      color: #fff;\n      text-align: center;\n    }\n  }\n  \n  //FROM BEFORE CCSS >>>>>\n  \n  .billingModel {\n    color: #556486;\n    // background: linear-gradient(0deg, #959FAF, #959FAF);\n    background-blend-mode: color, normal;\n  }\n  \n  .billingImg {\n    background: #fcfdff;\n  }\n  \n  .medium-font-size {\n    font-size: 14px;\n  }\n  \n  tr:hover {\n    background-color: #dfe8fb;\n    cursor: pointer;\n    font-weight: 600;\n  }\n  \n  td {\n    font-weight: none !important;\n  }\n  \n  .info-mark {\n    cursor: pointer;\n  }\n  \n  .col-md-2.FloatLeft .separate-arrow-wrapper {\n    width: 100%;\n    text-align: center;\n  }\n  \n  .billingImg {\n    height: 135px !important;\n  }\n  \n  @media only screen and (min-width: 1920px) {\n    .productHeading span {\n      padding-left: 70px;\n    }\n    .balance-container-white {\n      left: 55% !important;\n    }\n    .info-message:hover .balance-container-white {\n      line-height: 1.3;\n      padding-top: 7px;\n    }\n  }\n  \n  .products {\n    margin: 0px;\n    font-style: normal;\n    font-weight: normal;\n    line-height: 29px;\n    font-size: 18px;\n    text-align: center;\n  \n    color: #000000;\n  }\n  \n  button {\n    cursor: pointer;\n  }\n  \n  .wholeDiv {\n    min-height: 565px;\n    background-color: #ffffff;\n  }\n  \n  .thead {\n    background: #ffffff;\n  }\n  \n  table {\n    border-bottom: 1px solid #e3ebf3;\n  }\n  \n  .table td {\n    padding: 1rem;\n  }\n  \n  .trHeader:hover {\n    background: none !important;\n  }\n  \n  @media only screen and (max-width: 768px) {\n    .main-container {\n      .row-table {\n        margin-right: 10px;\n        margin-left: 10px;\n      }\n    }\n  }\n  \n  ////////////// table css //////////////\n  table {\n    width: 100%;\n  }\n  \n  td,\n  th {\n    border: #e2e3e6;\n  }\n  \n  .test-indicator {\n    width: 90%;\n    height: 60%;\n    text-align: right;\n    background-color: #ffefe9;\n    color: #f97841;\n    text-align: center;\n    font-size: 13px;\n    float: right;\n    margin-top: 8px;\n    padding-top: 3px;\n    padding-bottom: 3px;\n    padding-left: 30px;\n    padding-right: 30px;\n    border-radius: 3px;\n  }\n  \n  .active-product,\n  .testing-product,\n  .inactive-product,\n  .expired-product {\n    font-size: 8px;\n  }\n  \n  .side-options-position {\n    position: relative;\n  }\n  \n  // .column {\n  //   background: #ffffff;\n  //   border: 0.5px solid #f4f6fb;\n  //   box-sizing: border-box;\n  // }\n  \n  .ropstenNetworkOn-cell {\n    padding-right: 25px;\n  }\n  \n  .columnClicked-cell {\n    text-align: right;\n    margin-left: 50px;\n  }\n  \n  .columnClicked {\n    width: 40px;\n    text-align: right;\n  }\n  \n  .mat-sort-header-button,\n  .mat-row.ng-star-inserted {\n    margin: 0 auto;\n    text-align: center;\n  }\n  \n  .mat-column-productName > .mat-sort-header-container {\n    text-align: center;\n  }\n  \n  /////options button///////////\n  .dropdown-toggle::after {\n    display: none;\n  }\n  \n  .dropdown-item-action {\n    float: left;\n    text-align: left;\n    margin-top: 7px;\n    margin-right: 5px;\n    padding-left: 5px;\n  }\n  \n  .action-button-label {\n    font-family: \"Lato\", sans-serif;\n    font-weight: 600;\n    padding-top: 6px;\n    margin-right: 30px;\n    //padding-right: 25px;\n  }\n  \n  .dropdown-item {\n    color: #556486;\n    vertical-align: middle;\n  }\n  \n  .options-menu {\n    border: 1px solid #ffffff;\n    position: absolute;\n    background-color: #ffffff;\n    box-sizing: border-box;\n    z-index: 99;\n    right: -16px;\n    box-shadow: 0px 2px 25px rgba(85, 100, 134, 0.1);\n    //padding-right: 30px;\n  }\n  \n  .dropdown-item:hover {\n    color: #2d6ced !important;\n    background-color: #e0eaff !important;\n  }\n  \n  .arrow-up {\n    border-bottom: 10px solid #ffffff;\n    border-left: 10px solid transparent;\n    border-right: 10px solid transparent;\n    position: absolute;\n    top: -10px;\n    right: 13px;\n  }\n  \n  ///////tooltip//////////\n  .tooltip-icon {\n    margin-left: 5px;\n    color: #bdbdbd;\n  }\n  \n  .mat-column-productName {\n    text-align: center;\n    font-size: 13px;\n  }\n  \n  table th td {\n    text-align: center;\n    vertical-align: middle;\n  }\n  \n  ::ng-deep .product-table .mat-header-cell .mat-sort-header-container {\n    justify-content: center;\n    padding: 16px;\n  }\n  \n  // ::ng-deep .product-table .cdk-column-productName .mat-sort-header-container {\n  //   justify-content: flex-start;\n  // }\n  \n  // ::ng-deep .product-table .cdk-column-totalEarnings .mat-sort-header-container,\n  // ::ng-deep .product-table .cdk-column-creationTimestamp .mat-sort-header-container {\n  //   justify-content: flex-end;\n  // }\n  \n  ::ng-deep .product-table .mat-cell {\n    padding: 0 12px 0 0;\n  }\n  \n  ::ng-deep .new-product .tooltip-btn + .tooltip {\n    left: auto !important;\n    padding-bottom: 10px;\n    right: 95px;\n    top: 175px !important;\n  }\n  \n  ::ng-deep .new-bm .tooltip-btn + .tooltip {\n    left: auto !important;\n    padding-bottom: 10px;\n    right: 75px;\n    top: 175px !important;\n  }\n  \n  ::ng-deep .tooltip-btn + .tooltip {\n    left: auto !important;\n    right: 10px;\n    padding-bottom: 20px;\n  }\n  \n  ::ng-deep .tooltip-btn + .tooltip .arrow {\n    left: auto !important;\n    right: 20px;\n    bottom: 4px;\n  }\n  \n  ::ng-deep .tooltip-btn + .tooltip .tooltip-inner {\n    width: 275px;\n    max-width: inherit;\n    font-size: 12px;\n    line-height: 16px;\n    padding: 8px 14px;\n    text-align: left;\n  }\n  \n  ::ng-deep .tooltip-relative {\n    position: relative;\n    display: inline-block;\n  }\n  \n  ::ng-deep .tooltip-relative .tooltip-btn + .tooltip {\n    right: 0px !important;\n    top: auto !important;\n    left: auto !important;\n    bottom: 100%;\n    padding-bottom: 10px;\n  }\n  \n  .btn-inline {\n    display: inline-block;\n    white-space: nowrap;\n    margin-left: 0 !important;\n  }\n  \n  table thead th {\n    border-bottom: 1px solid #e3ebf3;\n  }\n  ",
+                    "styleUrl": "./product.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "productService",
+                        "type": "ProductService"
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "productService",
+                        "type": "ProductService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container-fluid main-container\">\n  <div class=\"row row-padding bm-header\">\n    <div class=\"col-sm-12 bm-header-col\">\n      <h4>Products</h4>\n    </div>\n  </div>\n  <div class=\"row row-padding row-table product-table\">\n    <table mat-table [dataSource]=\"dataSource\" matSort>\n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns\"></tr>\n\n      <!-- status Column -->\n      <ng-container matColumnDef=\"status\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header></th>\n        <td mat-cell *matCellDef=\"let product\">\n        </td>\n      </ng-container>\n\n      <!-- totalEarnings Column -->\n      <ng-container matColumnDef=\"productName\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header class=\"font-12\">Product Name</th>\n        <td mat-cell *matCellDef=\"let product\">\n          {{ product.productName }}\n        </td>\n      </ng-container>\n\n      <!-- totalEarnings Column -->\n      <ng-container matColumnDef=\"totalEarnings\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Earnings</th>\n        <td mat-cell *matCellDef=\"let product\" class=\"font-13\">\n          {{ product.totalEarnings / 100 | number: '1.2-5' }}\n        </td>\n      </ng-container>\n\n      <!-- activeCustomers Column -->\n      <ng-container matColumnDef=\"activeCustomers\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header>\n          Active Customers\n          <i data-toggle=\"tooltip\" class=\"fas fa-info-circle tooltip-icon\" title=\"You can only delete (/remove) a Product as long as you\n      don't have any customers subscribed to it.\" placement=\"top\"></i>\n        </th>\n        <td mat-cell *matCellDef=\"let product\" class=\"font-13\">\n          {{ product.activeCustomers }}\n        </td>\n      </ng-container>\n\n      <!-- numOfBilling Column -->\n      <ng-container matColumnDef=\"numOfBilling\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header>No. of Billing Models</th>\n        <td mat-cell *matCellDef=\"let product\" class=\"font-13\">\n          {{ product.numOfBilling }}\n        </td>\n      </ng-container>\n\n      <!-- ropstenNetworkOn Column -->\n      <ng-container matColumnDef=\"ropstenNetworkOn\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header></th>\n        <td mat-cell *matCellDef=\"let product\" class=\"font-13\">\n          <label class=\"test-indicator\">Test</label>\n        </td>\n      </ng-container>\n\n      <!-- creationTimestamp Column -->\n      <ng-container matColumnDef=\"creationTimestamp\">\n        <th mat-header-cell *matHeaderCellDef mat-sort-header>Creation Date</th>\n        <td mat-cell *matCellDef=\"let product\" class=\"font-13\">\n          {{ product.creationTimestamp }}\n        </td>\n      </ng-container>\n\n      <!-- columnClicked button -->\n      <ng-container matColumnDef=\"columnClicked\" class=\"options-button\">\n        <th mat-header-cell *matHeaderCellDef class=\"columnClicked\"></th>\n        <td mat-cell *matCellDef=\"let product\" class=\"columnClicked-cell\">\n          <div *ngIf=\"network === 1\" class=\"side-options-position\">\n            <button class=\"dropdown-field dropdown-toggle\" type=\"button\">\n              <i class=\"fa fa-ellipsis-v\" aria-hidden=\"true\"></i>\n            </button>\n\n            <div class=\"options-menu\">\n              <div class=\"arrow-up\"></div>\n\n              <button class=\"dropdown-item\">\n                <i class=\"fa fa-trash dropdown-item-action\" aria-hidden=\"true\"></i>\n                <label class=\"action-button-label\"><span>Delete Product</span></label>\n              </button>\n\n              <button class=\"dropdown-item\">\n                <i class=\"far fa-edit dropdown-item-action\" aria-hidden=\"true\"></i>\n                <label class=\"action-button-label\"><span>Edit Product</span></label>\n              </button>\n            </div>\n          </div>\n        </td>\n      </ng-container>\n    </table>\n  </div>\n</div>\n\n\n\n<!-- Copyright 2019 Google LLC. All Rights Reserved.\n      Use of this source code is governed by an MIT-style license that\n      can be found in the LICENSE file at http://angular.io/license -->\n"
         },
         {
             "name": "TopNavComponent",
@@ -332,6 +630,9 @@
                     "elements": [
                         {
                             "name": "MaterialModule"
+                        },
+                        {
+                            "name": "ProductModule"
                         }
                     ]
                 },
@@ -342,7 +643,55 @@
                             "name": "FooterComponent"
                         },
                         {
+                            "name": "ProductComponent"
+                        },
+                        {
                             "name": "TopNavComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "ProductModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": [
+                        {
+                            "name": "ProductService"
+                        }
+                    ]
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ProductComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "MaterialModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ProductComponent"
                         }
                     ]
                 },
@@ -615,6 +964,33 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ng9-business-console/src/lib/product/product.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProductComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng9-business-console/src/lib/product/product.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ProductService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng9-business-console/src/lib/product/product.service.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Datum",
+                "coveragePercent": 0,
+                "coverageCount": "0/21",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ng9-business-console/src/lib/top-nav/top-nav.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -658,7 +1034,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

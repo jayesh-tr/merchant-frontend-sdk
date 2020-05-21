@@ -1,38 +1,104 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div class="container-fluid main-container">
+  <div class="row row-padding bm-header">
+    <div class="col-sm-12 bm-header-col">
+      <h4>Products</h4>
+    </div>
+  </div>
+  <div class="row row-padding row-table product-table">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-  
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-  
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-  
-  
-  
-  <!-- Copyright 2019 Google LLC. All Rights Reserved.
+      <!-- status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+        <td mat-cell *matCellDef="let product">
+        </td>
+      </ng-container>
+
+      <!-- totalEarnings Column -->
+      <ng-container matColumnDef="productName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="font-12">Product Name</th>
+        <td mat-cell *matCellDef="let product">
+          {{ product.productName }}
+        </td>
+      </ng-container>
+
+      <!-- totalEarnings Column -->
+      <ng-container matColumnDef="totalEarnings">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Earnings</th>
+        <td mat-cell *matCellDef="let product" class="font-13">
+          {{ product.totalEarnings / 100 | number: '1.2-5' }}
+        </td>
+      </ng-container>
+
+      <!-- activeCustomers Column -->
+      <ng-container matColumnDef="activeCustomers">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Active Customers
+          <i data-toggle="tooltip" class="fas fa-info-circle tooltip-icon" title="You can only delete (/remove) a Product as long as you
+      don't have any customers subscribed to it." placement="top"></i>
+        </th>
+        <td mat-cell *matCellDef="let product" class="font-13">
+          {{ product.activeCustomers }}
+        </td>
+      </ng-container>
+
+      <!-- numOfBilling Column -->
+      <ng-container matColumnDef="numOfBilling">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>No. of Billing Models</th>
+        <td mat-cell *matCellDef="let product" class="font-13">
+          {{ product.numOfBilling }}
+        </td>
+      </ng-container>
+
+      <!-- ropstenNetworkOn Column -->
+      <ng-container matColumnDef="ropstenNetworkOn">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+        <td mat-cell *matCellDef="let product" class="font-13">
+          <label class="test-indicator">Test</label>
+        </td>
+      </ng-container>
+
+      <!-- creationTimestamp Column -->
+      <ng-container matColumnDef="creationTimestamp">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Creation Date</th>
+        <td mat-cell *matCellDef="let product" class="font-13">
+          {{ product.creationTimestamp }}
+        </td>
+      </ng-container>
+
+      <!-- columnClicked button -->
+      <ng-container matColumnDef="columnClicked" class="options-button">
+        <th mat-header-cell *matHeaderCellDef class="columnClicked"></th>
+        <td mat-cell *matCellDef="let product" class="columnClicked-cell">
+          <div *ngIf="network === 1" class="side-options-position">
+            <button class="dropdown-field dropdown-toggle" type="button">
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </button>
+
+            <div class="options-menu">
+              <div class="arrow-up"></div>
+
+              <button class="dropdown-item">
+                <i class="fa fa-trash dropdown-item-action" aria-hidden="true"></i>
+                <label class="action-button-label"><span>Delete Product</span></label>
+              </button>
+
+              <button class="dropdown-item">
+                <i class="far fa-edit dropdown-item-action" aria-hidden="true"></i>
+                <label class="action-button-label"><span>Edit Product</span></label>
+              </button>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+    </table>
+  </div>
+</div>
+
+
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
       Use of this source code is governed by an MIT-style license that
       can be found in the LICENSE file at http://angular.io/license -->
