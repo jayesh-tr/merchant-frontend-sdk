@@ -8,15 +8,16 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "showcase:client": "ng serve showcase -o --port 4200",
+    "clean": "rimraf dist",
     "ng9-business-console:build": "ng build ng9-business-console && npm i dist/ng9-business-console --save-optional",
     "library:build": "npm run ng9-business-console:build",
-    "library:watch": "ng build ng9-business-console --watch",
-    "library:pack": "cd dist/ng9-business-console && npm pack",
-    "library:publish": "cd dist/ng9-business-console && npm publish",
+    "library:pack": "wait-on dist/ng9-business-console/public-api.d.ts --timeout 30000 && cd dist/ng9-business-console && npm pack",
+    "library:publish": "wait-on dist/ng9-business-console/public-api.d.ts --timeout 30000 && cd dist/ng9-business-console && npm publish",
+    "watch:ng9-business-console": "ng build ng9-business-console --watch",
+    "client:showcase": "wait-on dist/ng9-business-console/public-api.d.ts --timeout 30000 && ng serve showcase -o --port 4200",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -c .storybook -o .story-books.out",
-    "storybook:local-server": "npx http-server .story-books.out"
+    "build-storybook": "wait-on dist/ng9-business-console/public-api.d.ts --timeout 30000 && build-storybook -c .storybook -o .story-books.out",
+    "storybook:local-server": "wait-on .story-books.out --timeout 30000 && npx http-server .story-books.out"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +33,7 @@
     "@angular/router": "~9.1.6",
     "rxjs": "~6.5.4",
     "tslib": "~1.10.0",
+    "wait-on": "~5.0.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
