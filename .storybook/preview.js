@@ -1,8 +1,14 @@
 import { addParameters } from '@storybook/angular';
+import { setCompodocJson } from '@storybook/addon-docs/angular';
+import docJson from '../documentation.json';
+
 import {
+  DEFAULT_VIEWPORT,
   INITIAL_VIEWPORTS,
-  MINIMAL_VIEWPORTS,
+  MINIMAL_VIEWPORTS
 } from '@storybook/addon-viewport';
+
+setCompodocJson(docJson);
 
 const customViewports = {
   kindleFire2: {
@@ -24,9 +30,13 @@ const customViewports = {
 addParameters({
   viewport: {
     viewports: {
+      ...DEFAULT_VIEWPORT,
       ...INITIAL_VIEWPORTS,
       ...MINIMAL_VIEWPORTS,
       ...customViewports
     },
   },
+  docs: {
+    iframeHeight: 400
+  }
 });
