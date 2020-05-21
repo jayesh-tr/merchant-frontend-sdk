@@ -24,6 +24,7 @@ module.exports = {
       },
     },
     '@storybook/addon-a11y',
-    '@storybook/addon-docs'
+    '@storybook/addon-docs',
+    'storybook-dark-mode'
   ],
 };
