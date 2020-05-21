@@ -1,0 +1,776 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "classes": [
+        {
+            "name": "AppPage",
+            "id": "class-AppPage-ceea6cad3a8c0bff6a64b18e52e9b45f",
+            "file": "projects/showcase/e2e/src/app.po.ts",
+            "type": "class",
+            "sourceCode": "import { browser, by, element } from 'protractor';\n\nexport class AppPage {\n  navigateTo(): Promise<unknown> {\n    return browser.get(browser.baseUrl) as Promise<unknown>;\n  }\n\n  getTitleText(): Promise<string> {\n    return element(by.css('showcase-root .content span')).getText() as Promise<string>;\n  }\n}\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getTitleText",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<string>",
+                    "typeParameters": [],
+                    "line": 8
+                },
+                {
+                    "name": "navigateTo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<unknown>",
+                    "typeParameters": [],
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-a20bc6562da1c0300cb1bcfdcfa5bee3",
+            "file": "projects/showcase/src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "showcase-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'showcase'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'showcase-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'showcase';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<ng9-business-console-top-nav></ng9-business-console-top-nav>\n<ng9-business-console-footer></ng9-business-console-footer>\n<router-outlet></router-outlet>\n"
+        },
+        {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-d4fb7bc96ed205fee4b1df72647e60aa",
+            "file": "projects/ng9-business-console/src/lib/footer/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ng9-business-console-footer",
+            "styleUrls": [
+                "./footer.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'footer component works!'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'ng9-business-console-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss']\n})\nexport class FooterComponent implements OnInit {\n  title = 'footer component works!';\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./footer.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<h3>{{ title }}</h3>\n"
+        },
+        {
+            "name": "TopNavComponent",
+            "id": "component-TopNavComponent-3232d8e9219aeb071043a8185d7926d0",
+            "file": "projects/ng9-business-console/src/lib/top-nav/top-nav.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ng9-business-console-top-nav",
+            "styleUrls": [
+                "./top-nav.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./top-nav.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'ng9-business-console-top-nav',\n  templateUrl: './top-nav.component.html',\n  styleUrls: ['./top-nav.component.scss']\n})\nexport class TopNavComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".menu-spacer {\n  flex: 1 1 auto;\n}",
+                    "styleUrl": "./top-nav.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-toolbar color=\"primary\">\n  <mat-toolbar-row>\n    <button mat-icon-button>\n      <img\n        alt=\"angular\"\n        src=\"https://material.angular.io/assets/img/homepage/angular-white-transparent.svg\"\n      />\n    </button>\n    <span>ng9-business-console-library</span> <span class=\"menu-spacer\"></span>\n\n    <button mat-button [matMenuTriggerFor]=\"belowMenu\">About Us</button>\n    <mat-menu #belowMenu=\"matMenu\" yPosition=\"below\">\n      <button mat-menu-item>Project Plan</button>\n      <button mat-menu-item>Current Progress</button>\n    </mat-menu>\n\n    <button mat-button>Sign In</button>\n    <button mat-button>Sign Up</button>\n  </mat-toolbar-row>\n</mat-toolbar>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "Ng9BusinessConsoleModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "MaterialModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "Ng9BusinessConsoleModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        },
+                        {
+                            "name": "TopNavComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "MaterialModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "FooterComponent"
+                        },
+                        {
+                            "name": "TopNavComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "ButtonWithLinkToAnotherStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/1-Button.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: 'Go to Welcome Story',\n    onClick: linkTo('Welcome'),\n  },\n})"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/showcase/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng9-business-console/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "Emoji",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/1-Button.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: '😀 😎 👍 💯',\n  },\n})"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/showcase/src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/showcase/src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ng9-business-console/src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/showcase/src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/1-Button.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: 'Hello Button',\n  },\n})"
+            },
+            {
+                "name": "ToStorybook",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/0-Welcome.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Welcome,\n  props: {},\n})"
+            },
+            {
+                "name": "ToStorybook",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/2-footer.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: FooterComponent,\n  props: {},\n})"
+            },
+            {
+                "name": "withKnobss",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/1-Button.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: text('text', 'Hello button component'),\n  },\n})"
+            },
+            {
+                "name": "WithSomeEmojiAndAction",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/1-Button.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: '😀 😎 👍 💯',\n    onClick: action('This was clicked OMG'),\n  },\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/stories/1-Button.stories.ts": [
+                {
+                    "name": "ButtonWithLinkToAnotherStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/1-Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: 'Go to Welcome Story',\n    onClick: linkTo('Welcome'),\n  },\n})"
+                },
+                {
+                    "name": "Emoji",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/1-Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: '😀 😎 👍 💯',\n  },\n})"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/1-Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: 'Hello Button',\n  },\n})"
+                },
+                {
+                    "name": "withKnobss",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/1-Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: text('text', 'Hello button component'),\n  },\n})"
+                },
+                {
+                    "name": "WithSomeEmojiAndAction",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/1-Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: '😀 😎 👍 💯',\n    onClick: action('This was clicked OMG'),\n  },\n})"
+                }
+            ],
+            "projects/showcase/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/showcase/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/showcase/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/ng9-business-console/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng9-business-console/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ng9-business-console/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "projects/showcase/src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/showcase/src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "projects/showcase/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/showcase/src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/stories/0-Welcome.stories.ts": [
+                {
+                    "name": "ToStorybook",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/0-Welcome.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Welcome,\n  props: {},\n})"
+                }
+            ],
+            "src/stories/2-footer.stories.ts": [
+                {
+                    "name": "ToStorybook",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/2-footer.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: FooterComponent,\n  props: {},\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "projects/showcase/src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/ng9-business-console/src/lib/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng9-business-console/src/lib/top-nav/top-nav.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TopNavComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng9-business-console/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ng9-business-console/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/showcase/e2e/src/app.po.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AppPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/showcase/src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/showcase/src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/showcase/src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/showcase/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/showcase/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/0-Welcome.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ToStorybook",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/1-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonWithLinkToAnotherStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/1-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Emoji",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/1-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/1-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "withKnobss",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/1-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithSomeEmojiAndAction",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/2-footer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ToStorybook",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

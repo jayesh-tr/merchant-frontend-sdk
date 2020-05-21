@@ -1,12 +1,26 @@
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withA11y } from '@storybook/addon-a11y';
 
 import { Button } from '@storybook/angular/demo';
+import * as buttonComponentNotes from './notes/button-component.notes.md';
+import { text, withKnobs } from '@storybook/addon-knobs';
 
 export default {
   title: 'Button',
   component: Button,
+  decorators: [
+    withKnobs,
+    withA11y
+  ]
 };
+
+export const withKnobss = () => ({
+  component: Button,
+  props: {
+    text: text('text', 'Hello button component'),
+  },
+});
 
 export const Text = () => ({
   component: Button,
@@ -23,7 +37,7 @@ export const Emoji = () => ({
 });
 
 Emoji.story = {
-  parameters: { notes: 'My notes on a button with emojis' },
+  parameters: { notes: buttonComponentNotes },
 };
 
 export const WithSomeEmojiAndAction = () => ({
