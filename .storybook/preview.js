@@ -38,5 +38,9 @@ addParameters({
   },
   docs: {
     iframeHeight: 400
+  },
+  darkMode: {
+    darkClass: 'lights-out',
+    lightClass: 'lights-on'
   }
 });
