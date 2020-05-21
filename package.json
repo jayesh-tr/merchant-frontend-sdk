@@ -11,6 +11,7 @@
     "showcase:client": "ng serve showcase -o --port 4200",
     "ng9-business-console:build": "ng build ng9-business-console && npm i dist/ng9-business-console --save-optional",
     "library:build": "npm run ng9-business-console:build",
+    "library:watch": "ng build ng9-business-console --watch",
     "library:pack": "cd dist/ng9-business-console && npm pack",
     "library:publish": "cd dist/ng9-business-console && npm publish",
     "storybook": "start-storybook -p 6006",
