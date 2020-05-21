@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { MatTableDataSource } from "@angular/material/table";
 import { ProductService, Datum } from "./product.service";
 
@@ -10,10 +10,19 @@ import { ProductService, Datum } from "./product.service";
 
 export class ProductComponent implements OnInit {
 
-  public displayedColumns: Array<string>;
+  // @Input()
+  // products: Array<Datum>;
+
+  // @Input()
+  // displayedColumns: Array<string>;
+
+  // @Input()
+  // dataSource: Array<Datum>;
+
   public dataSource: any;
-  public network: number;
   public products: Array<Datum> = [];
+  public displayedColumns: Array<string>;
+  
   constructor(
     public productService: ProductService
   ) { }
@@ -33,7 +42,7 @@ export class ProductComponent implements OnInit {
     this.products = this.productService.getProductList();
 
     if (this.products.length > 0)
-      this.dataSource = new MatTableDataSource(this.products);
+       this.dataSource = new MatTableDataSource(this.products);
   }
 }
 
