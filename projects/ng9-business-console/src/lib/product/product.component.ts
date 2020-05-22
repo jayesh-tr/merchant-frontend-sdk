@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { MatTableDataSource } from "@angular/material/table";
-import { ProductService, Datum } from "./product.service";
 
 @Component({
   selector: 'ng9-business-console-product',
@@ -8,41 +7,21 @@ import { ProductService, Datum } from "./product.service";
   styleUrls: ['./product.component.scss']
 })
 
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnChanges {
 
-  // @Input()
-  // products: Array<Datum>;
+  @Input()
+  products: Array<Object> = [];
 
-  // @Input()
-  // displayedColumns: Array<string>;
-
-  // @Input()
-  // dataSource: Array<Datum>;
+  @Input()
+  displayedColumns: Array<string>;
 
   public dataSource: any;
-  public products: Array<Datum> = [];
-  public displayedColumns: Array<string>;
 
-  constructor(
-    public productService: ProductService
-  ) { }
-
-  ngOnInit() {
-    this.displayedColumns = [
-      'status',
-      'productName',
-      'totalEarnings',
-      'activeCustomers',
-      'numOfBilling',
-      'ropstenNetworkOn',
-      'creationTimestamp',
-      'columnClicked'
-    ];
-
-    this.products = this.productService.getProductList();
-
-    if (this.products.length > 0)
+  constructor() { }
+  ngOnChanges(changes: import("@angular/core").SimpleChanges): void {
+    if (changes.products && changes.displayedColumns && changes['products'].currentValue) {
       this.dataSource = new MatTableDataSource(this.products);
+    }
   }
 }
 
