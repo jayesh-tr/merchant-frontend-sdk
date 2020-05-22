@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   public dataSource: any;
   public products: Array<Datum> = [];
   public displayedColumns: Array<string>;
-  
+
   constructor(
     public productService: ProductService
   ) { }
@@ -42,7 +42,7 @@ export class ProductComponent implements OnInit {
     this.products = this.productService.getProductList();
 
     if (this.products.length > 0)
-       this.dataSource = new MatTableDataSource(this.products);
+      this.dataSource = new MatTableDataSource(this.products);
   }
 }
 

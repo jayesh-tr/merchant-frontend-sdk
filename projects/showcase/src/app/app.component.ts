@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-//import { ProductService } from '@ng9/business-console/lib/product/product.service';
+import { ProductService, FooterService } from '@ng9/business-console';
 
 @Component({
   selector: 'showcase-root',
@@ -9,8 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public title: any;
   constructor(
-    //public productService: ProductService
-  ){
-    //this.title = this.productService.getProductList()
-  }  
+    public productService: ProductService,
+    public footerService: FooterService
+  ) { }
 }
