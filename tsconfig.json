@@ -30,5 +30,11 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  }
+  },
+  "exclude": [
+    "**/*.spec.ts",
+    "projects/ng9-business-console/src/test.ts",
+    "**/*.stories.ts",
+    "jest-config"
+  ]
 }
