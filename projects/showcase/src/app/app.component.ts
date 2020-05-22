@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService, FooterService } from '@ng9/business-console';
 
 @Component({
   selector: 'showcase-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'showcase';
+  public title: any;
+  constructor(
+    public productService: ProductService,
+    public footerService: FooterService
+  ) { }
 }
