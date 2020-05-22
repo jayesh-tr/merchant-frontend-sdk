@@ -1,7 +1,9 @@
-import { storiesOf, moduleMetadata } from '@storybook/angular';
+import { storiesOf, moduleMetadata, addDecorator } from '@storybook/angular';
 import { MatTableModule } from '@angular/material/table';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { CdkTableModule } from '@angular/cdk/table';
+import { withA11y } from '@storybook/addon-a11y';
+import { array, withKnobs } from '@storybook/addon-knobs';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../projects/ng9-business-console/src/lib/product/product.service';
 import { ProductComponent } from '../../projects/ng9-business-console/src/lib/product/product.component';
@@ -16,7 +18,8 @@ const mockProductData = [
   { "productID": "RkmxawQXiAHbsP44PNqxHCu6qeC18ibs", "businessID": "y2beEPTM49El0wXfAwRlzSRYzKcnIBD0", "categoryID": 14, "tags": null, "productName": "NoKemix", "productDescription": null, "creationTimestamp": "2020/05/07", "lastUpdateTimestamp": "1568040314", "productUrl": "www.example.com", "imageUrl": "https://preassets.pumapay.io/product-img/f4c0171016876b585748b34ad7943921.png", "verified": false, "usdTotalEarnings": "0", "eurTotalEarnings": "0", "jpyTotalEarnings": "0", "gbpTotalEarnings": "0", "activeCustomers": 0, "numOfBilling": 0, "enabled": true, "totalEarnings": 0, "status": "inactive" },
   { "productID": "pF3tNtEdnR7oKB3L4tkbqSHyM3OSabfB", "businessID": "y2beEPTM49El0wXfAwRlzSRYzKcnIBD0", "categoryID": 14, "tags": null, "productName": "ds", "productDescription": null, "creationTimestamp": "2020/05/08", "lastUpdateTimestamp": "1566486299", "productUrl": "www.example.com", "imageUrl": "https://preassets.pumapay.io/product-img/3baeee3598f0dd40aecea034d469799f.png", "verified": false, "usdTotalEarnings": "0", "eurTotalEarnings": "0", "jpyTotalEarnings": "0", "gbpTotalEarnings": "0", "activeCustomers": 0, "numOfBilling": 2, "enabled": true, "totalEarnings": 0, "status": "active" },
   { "productID": "9Wl5Z70EFHMeEhBIOTUlh13sE2BztYav", "businessID": "y2beEPTM49El0wXfAwRlzSRYzKcnIBD0", "categoryID": 14, "tags": null, "productName": "Contract v2.1", "productDescription": null, "creationTimestamp": "2020/05/09", "lastUpdateTimestamp": "1565681180", "productUrl": "www.example.com", "imageUrl": "https://preassets.pumapay.io/product-img/52a29a4b736db94deaa2ad4523bfb02a.png", "verified": false, "usdTotalEarnings": "0", "eurTotalEarnings": "0", "jpyTotalEarnings": "0", "gbpTotalEarnings": "0", "activeCustomers": 0, "numOfBilling": 0, "enabled": true, "totalEarnings": 0, "status": "inactive" },
-  { "productID": "IPDLyR3a6MW7Frtr0jDBZDWIPtFp716g", "businessID": "y2beEPTM49El0wXfAwRlzSRYzKcnIBD0", "categoryID": 14, "tags": null, "productName": "Contract v2", "productDescription": null, "creationTimestamp": "2020/05/10", "lastUpdateTimestamp": "1565681180", "productUrl": "www.example.com", "imageUrl": "https://preassets.pumapay.io/product-img/48d3e043b150c985bf9d21489dc46db4.png", "verified": false, "usdTotalEarnings": "0", "eurTotalEarnings": "0", "jpyTotalEarnings": "0", "gbpTotalEarnings": "0", "activeCustomers": 0, "numOfBilling": 0, "enabled": true, "totalEarnings": 0, "status": "inactive" }];
+  { "productID": "IPDLyR3a6MW7Frtr0jDBZDWIPtFp716g", "businessID": "y2beEPTM49El0wXfAwRlzSRYzKcnIBD0", "categoryID": 14, "tags": null, "productName": "Contract v2", "productDescription": null, "creationTimestamp": "2020/05/10", "lastUpdateTimestamp": "1565681180", "productUrl": "www.example.com", "imageUrl": "https://preassets.pumapay.io/product-img/48d3e043b150c985bf9d21489dc46db4.png", "verified": false, "usdTotalEarnings": "0", "eurTotalEarnings": "0", "jpyTotalEarnings": "0", "gbpTotalEarnings": "0", "activeCustomers": 0, "numOfBilling": 0, "enabled": true, "totalEarnings": 0, "status": "inactive" }
+];
 
 storiesOf("Product", module)
   .addDecorator(
@@ -27,6 +30,8 @@ storiesOf("Product", module)
       imports: [CdkTableModule, CommonModule, MatTableModule]
     })
   )
+  .addDecorator(withKnobs)
+  .addDecorator(withA11y)
   .add("Empty Product", () => ({
     component: ProductComponent,
     props: {}
@@ -46,5 +51,21 @@ storiesOf("Product", module)
         'columnClicked'
       ]
     }
+  }))
+  .add("With Knobs", () => ({
+    component: ProductComponent,
+    props: {
+      products: array('Product\'s Array', []),
+      displayedColumns: [
+        'status',
+        'productName',
+        'totalEarnings',
+        'activeCustomers',
+        'numOfBilling',
+        'ropstenNetworkOn',
+        'creationTimestamp',
+        'columnClicked'
+      ]
+    },
   }))
   ;
