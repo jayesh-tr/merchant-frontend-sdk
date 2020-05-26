@@ -22,6 +22,12 @@
     "storybook:local-server": "wait-on .story-books.out --timeout 30000 && npx http-server .story-books.out"
   },
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && ng lint && jest --watch=false",
+      "pre-push": "ng build ng9-business-console"
+    }
+  },
   "dependencies": {
     "@angular/animations": "~9.1.6",
     "@angular/cdk": "~9.2.4",
@@ -66,6 +72,7 @@
     "autoprefixer": "~9.8.0",
     "babel-loader": "~8.1.0",
     "codelyzer": "~5.1.2",
+    "husky": "^4.2.5",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "jest": "~26.0.1",
@@ -76,10 +83,13 @@
     "karma-jasmine": "~3.0.1",
     "karma-jasmine-html-reporter": "~1.4.2",
     "ng-packagr": "~9.0.0",
+    "prettier": "~2.0.5",
+    "pretty-quick": "~2.0.1",
     "protractor": "~5.4.3",
     "storybook-dark-mode": "~0.6.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
+    "tslint-config-prettier": "~1.18.0",
     "typescript": "~3.8.3"
   },
   "optionalDependencies": {
