@@ -1,0 +1,30 @@
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+
+@Component({
+  selector: '<%= dasherize(projectName) %>-<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html',
+  styleUrls: ['./<%= dasherize(name) %>.component.scss'],
+})
+export class <%= classify(name) %>Component implements OnChanges {
+  @Input()
+  /* tslint:disable-next-line */
+  products: Array<Object> = [];
+
+  @Input()
+  displayedColumns: Array<string>;
+
+  public dataSource: any;
+
+  constructor() {}
+  ngOnChanges(changes: import('@angular/core').SimpleChanges): void {
+    if (
+      changes.products &&
+      changes.displayedColumns &&
+      /* tslint:disable-next-line */
+      changes['products'].currentValue
+    ) {
+      this.dataSource = new MatTableDataSource(this.products);
+    }
+  }
+}

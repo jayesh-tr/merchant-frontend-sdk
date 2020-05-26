@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
+
+import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service';
+import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+
+// import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service';
+
+@NgModule({
+  declarations: [<%= classify(name) %>Component],
+  imports: [
+    CommonModule,
+    MatTableModule
+  ],
+  exports: [
+    <%= classify(name) %>Component
+  ],
+  providers: [<%= classify(name) %>Service]
+})
+export class <%= classify(name) %>Module { }

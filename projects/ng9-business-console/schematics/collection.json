@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Add ng0 business console library to the project.",
+      "factory": "./ng-add/index#ngAdd"
+    },
+    "product-table": {
+      "description": "Generate a product table in the project.",
+      "factory": "./product-table/index#ProductTable",
+      "schema": "./product-table/schema.json"
+    }
+  }
+}
