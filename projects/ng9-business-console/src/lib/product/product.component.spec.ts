@@ -1,25 +1,27 @@
-// import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-// import { FooterComponent } from './footer.component';
+import { ProductComponent } from './product.component';
+import { MatTableModule } from '@angular/material/table';
 
-// describe('FooterComponent', () => {
-//   let component: FooterComponent;
-//   let fixture: ComponentFixture<FooterComponent>;
+describe('ProductComponent', () => {
+  let component: ProductComponent;
+  let fixture: ComponentFixture<ProductComponent>;
 
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ FooterComponent ]
-//     })
-//     .compileComponents();
-//   }));
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ ProductComponent ],
+      imports: [MatTableModule]
+    })
+    .compileComponents();
+  }));
 
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(FooterComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ProductComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+  it('should create', () => {
+    expect(fixture).toMatchSnapshot();
+  });
+});
