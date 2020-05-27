@@ -21,13 +21,10 @@ module.exports = {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: [
-    "/jest-config/",
-    "/node_modules/"
-  ],
+  coveragePathIgnorePatterns: ['/jest-config/', '/node_modules/'],
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -57,16 +54,16 @@ module.exports = {
 
   // A set of global variables that need to be available in all test environments
   globals: {
-    "ts-jest": {
-      "tsConfig": "<rootDir>/projects/ng9-business-console/tsconfig.spec.json",
-      "stringifyContentPathRegex": "\\.html$",
-      "diagnostics": false,
-      "isolatedModules": true,
-      "astTransformers": [
-        "<rootDir>/node_modules/jest-preset-angular/build/StripStylesTransformer",
-        "<rootDir>/node_modules/jest-preset-angular/build/InlineFilesTransformer"
-      ]
-    }
+    'ts-jest': {
+      tsConfig: '<rootDir>/projects/ng9-business-console/tsconfig.spec.json',
+      stringifyContentPathRegex: '\\.html$',
+      diagnostics: false,
+      isolatedModules: true,
+      astTransformers: [
+        '<rootDir>/node_modules/jest-preset-angular/build/StripStylesTransformer',
+        '<rootDir>/node_modules/jest-preset-angular/build/InlineFilesTransformer',
+      ],
+    },
   },
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
@@ -77,20 +74,13 @@ module.exports = {
   // ],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: [
-    "ts",
-    "tsx",
-    "js",
-    "jsx",
-    "json",
-    "node",
-    ".html"
-  ],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node', '.html'],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "\\.(css|less)$": "<rootDir>/src/jest-config/styleMock.js",
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/jest-config/fileMock.js"
+    '\\.(css|less)$': '<rootDir>/src/jest-config/styleMock.js',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/jest-config/fileMock.js',
   },
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -102,7 +92,7 @@ module.exports = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: "jest-preset-angular",
+  preset: 'jest-preset-angular',
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -137,14 +127,12 @@ module.exports = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: [
-    "<rootDir>/jest-config/setup.ts"
-  ],
+  setupFilesAfterEnv: ['<rootDir>/jest-config/setup.ts'],
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   snapshotSerializers: [
-    "<rootDir>/node_modules/jest-preset-angular/build/AngularSnapshotSerializer.js",
-    "<rootDir>/node_modules/jest-preset-angular/build/HTMLCommentSerializer.js"
+    '<rootDir>/node_modules/jest-preset-angular/build/AngularSnapshotSerializer.js',
+    '<rootDir>/node_modules/jest-preset-angular/build/HTMLCommentSerializer.js',
   ],
 
   // The test environment that will be used for testing
@@ -158,17 +146,19 @@ module.exports = {
 
   // The glob patterns Jest uses to detect test files
   testMatch: [
-    "<rootDir>/projects/ng9-business-console/**/__tests__/**/*.[jt]s?(x)",
-    "<rootDir>/projects/ng9-business-console/**/?(*.)+(spec|test).[tj]s?(x)"
+    '<rootDir>/projects/ng9-business-console/**/__tests__/**/*.[jt]s?(x)',
+    '<rootDir>/projects/ng9-business-console/**/?(*.)+(spec|test).[tj]s?(x)',
+    '<rootDir>/projects/showcase/**/__tests__/**/*.[jt]s?(x)',
+    '<rootDir>/projects/showcase/**/?(*.)+(spec|test).[tj]s?(x)',
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   testPathIgnorePatterns: [
-    "<rootDir>/node_modules/",
-    "<rootDir>/dist/",
-    "<rootDir>/storybook-static/",
-    "<rootDir>/projects/ng9-business-console/src/test.ts",
-    "<rootDir>/projects/showcase/",
+    '<rootDir>/node_modules/',
+    '<rootDir>/dist/',
+    '<rootDir>/storybook-static/',
+    '<rootDir>/projects/ng9-business-console/src/test.ts',
+    '<rootDir>/projects/showcase/src/test.ts',
   ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
@@ -188,15 +178,12 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "^.+\\.(ts|html)$": "ts-jest",
-    "^.+\\.js$": "babel-jest"
+    '^.+\\.(ts|html)$': 'ts-jest',
+    '^.+\\.js$': 'babel-jest',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  transformIgnorePatterns: [
-    "/node_modules/",
-    "node_modules/(?!@storybook/*)"
-  ],
+  transformIgnorePatterns: ['/node_modules/', 'node_modules/(?!@storybook/*)'],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,

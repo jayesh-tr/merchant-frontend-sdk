@@ -42,7 +42,8 @@
               "projects/ng9-business-console/tsconfig.spec.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "projects/ng9-business-console/schematics/ng-add/index.ts"
             ]
           }
         }
@@ -153,7 +154,8 @@
               "projects/showcase/e2e/tsconfig.json"
             ],
             "exclude": [
-              "**/node_modules/**"
+              "**/node_modules/**",
+              "projects/ng9-business-console/schematics/ng-add/index.ts"
             ]
           }
         },

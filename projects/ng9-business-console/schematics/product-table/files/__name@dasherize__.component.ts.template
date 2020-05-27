@@ -2,11 +2,11 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'ng9-business-console-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss'],
+  selector: '<%= dasherize(projectName) %>-<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html',
+  styleUrls: ['./<%= dasherize(name) %>.component.scss'],
 })
-export class ProductComponent implements OnChanges {
+export class <%= classify(name) %>Component implements OnChanges {
   @Input()
   /* tslint:disable-next-line */
   products: Array<Object> = [];

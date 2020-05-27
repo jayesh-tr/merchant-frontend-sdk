@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopNavComponent should create 1`] = `
+<ng9-business-console-top-nav>
+  <mat-toolbar
+    class="mat-toolbar mat-primary mat-toolbar-multiple-rows"
+    color="primary"
+    ng-reflect-color="primary"
+  >
+    <mat-toolbar-row
+      class="mat-toolbar-row"
+    >
+      <button
+        mat-icon-button=""
+      >
+        <img
+          alt="angular"
+          src="https://material.angular.io/assets/img/homepage/angular-white-transparent.svg"
+        />
+      </button>
+      <span>
+        ng9-business-console-library
+      </span>
+      <span
+        class="menu-spacer"
+      />
+      <button
+        aria-haspopup="true"
+        class="mat-menu-trigger"
+        mat-button=""
+        ng-reflect-menu="[object Object]"
+      >
+        About Us
+      </button>
+      <mat-menu
+        ng-reflect-y-position="below"
+        yposition="below"
+      >
+        
+      </mat-menu>
+      <button
+        mat-button=""
+      >
+        Sign In
+      </button>
+      <button
+        mat-button=""
+      >
+        Sign Up
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</ng9-business-console-top-nav>
+`;
