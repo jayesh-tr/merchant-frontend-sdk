@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopNavComponent } from './top-nav.component';
-import { MaterialModule } from '../material.module';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 describe('TopNavComponent', () => {
   let component: TopNavComponent;
@@ -9,9 +10,10 @@ describe('TopNavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TopNavComponent],
-      imports: [MaterialModule],
-    }).compileComponents();
+      declarations: [ TopNavComponent ],
+      imports: [MatMenuModule, MatToolbarModule]
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,6 +23,6 @@ describe('TopNavComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(fixture).toMatchSnapshot();
   });
 });

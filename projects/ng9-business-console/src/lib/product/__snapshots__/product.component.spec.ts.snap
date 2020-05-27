@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductComponent should create 1`] = `
+<ng9-business-console-product
+  products={[Function Array]}
+>
+  <div
+    class="container-fluid main-container"
+  >
+    <div
+      class="row row-padding bm-header"
+    >
+      <div
+        class="col-sm-12 bm-header-col"
+      >
+        <h4>
+          Products
+        </h4>
+      </div>
+    </div>
+    
+    <div
+      class="no-product"
+    >
+      <h2>
+        No products are available!
+      </h2>
+    </div>
+    
+  </div>
+</ng9-business-console-product>
+`;

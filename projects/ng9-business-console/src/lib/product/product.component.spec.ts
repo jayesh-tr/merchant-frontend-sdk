@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatTableModule } from '@angular/material/table';
+
 import { ProductComponent } from './product.component';
+import { MatTableModule } from '@angular/material/table';
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
@@ -8,9 +9,10 @@ describe('ProductComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductComponent],
-      imports: [MatTableModule],
-    }).compileComponents();
+      declarations: [ ProductComponent ],
+      imports: [MatTableModule]
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
@@ -20,6 +22,6 @@ describe('ProductComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(fixture).toMatchSnapshot();
   });
 });

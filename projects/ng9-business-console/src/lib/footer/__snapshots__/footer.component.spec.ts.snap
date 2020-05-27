@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterComponent should create 1`] = `
+<ng9-business-console-footer
+  title={[Function String]}
+>
+  <h3>
+    
+  </h3>
+</ng9-business-console-footer>
+`;
