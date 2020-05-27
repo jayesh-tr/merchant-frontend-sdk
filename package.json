@@ -95,9 +95,5 @@
   },
   "optionalDependencies": {
     "@ng9/business-console": "file:dist/ng9-business-console"
-  },
-  "jest": {
-    "preset": "jest-preset-angular",
-    "setupTestFrameworkScriptFile": "<rootDir>/jest-config/setup.ts"
   }
 }
