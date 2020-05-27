@@ -8,22 +8,17 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ProductComponent implements OnChanges {
   @Input()
-  /* tslint:disable-next-line */
-  products: Array<Object> = [];
+  products: Array<object> = [];
 
   @Input()
   displayedColumns: Array<string>;
 
   public dataSource: any;
-
   constructor() {}
+
   ngOnChanges(changes: import('@angular/core').SimpleChanges): void {
-    if (
-      changes.products &&
-      changes.displayedColumns &&
-      /* tslint:disable-next-line */
-      changes['products'].currentValue
-    ) {
+    console.log('changes', changes);
+    if (changes.products && changes.products.currentValue) {
       this.dataSource = new MatTableDataSource(this.products);
     }
   }

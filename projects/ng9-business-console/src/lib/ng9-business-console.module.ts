@@ -5,20 +5,11 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductComponent } from './product/product.component';
 import { ProductModule } from './product/product.module';
 import { FooterModule } from './footer/footer.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    TopNavComponent
-  ],
-  imports: [
-    MaterialModule,
-    ProductModule,
-    FooterModule
-  ],
-  exports: [
-    FooterComponent,
-    TopNavComponent,
-    ProductComponent
-  ]
+  declarations: [TopNavComponent],
+  imports: [MaterialModule, ProductModule, FooterModule, HttpClientModule],
+  exports: [FooterComponent, TopNavComponent, ProductComponent],
 })
-export class Ng9BusinessConsoleModule { }
+export class Ng9BusinessConsoleModule {}

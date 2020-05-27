@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  socketUrl: 'http://localhost:3000',
+  username: 'constantinos@pumapay.io',
+  password: '!Password12',
 };
 
 /*

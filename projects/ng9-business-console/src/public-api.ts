@@ -11,3 +11,4 @@ export * from './lib/top-nav/top-nav.component';
 export * from './lib/product/product.component';
 export * from './lib/product/product.service';
 export * from './lib/footer/footer.service';
+export * from './services/authentication.service';
