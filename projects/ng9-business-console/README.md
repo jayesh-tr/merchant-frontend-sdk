@@ -15,6 +15,12 @@ Run `ng build ng9-business-console` to build the project. The build artifacts wi
 
 After building your library with `ng build ng9-business-console`, go to the dist folder `cd dist/ng9-business-console` and run `npm publish`.
 
+## Running snapshot tests
+
+Run `npm run test:watch` to generate snapshots and also watch for any changes in DOM.
+
+Run `npm run test:update` to update the snapshots of DOM.
+
 ## Running unit tests
 
 Run `ng test ng9-business-console` to execute the unit tests via [Karma](https://karma-runner.github.io).
