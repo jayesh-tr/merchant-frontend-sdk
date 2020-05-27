@@ -14,26 +14,28 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent implements OnInit {
   public data: Array<Datum>;
-  public columns: [
-    'status',
-    'productName',
-    'totalEarnings',
-    'activeCustomers',
-    'numOfBilling',
-    'ropstenNetworkOn',
-    'creationTimestamp',
-    'columnClicked'
-  ];
+  public columns: Array<string>;
 
   constructor(
     public productService: ProductService,
     public authenticationService: AuthenticationService
-  ) {}
+  ) {
+    this.columns = [
+      'status',
+      'productName',
+      'totalEarnings',
+      'activeCustomers',
+      'numOfBilling',
+      'ropstenNetworkOn',
+      'creationTimestamp',
+      'columnClicked',
+    ];
+  }
 
   ngOnInit(): void {
     this.authenticationService
-      .login(environment.username, environment.password)
-      .then((response) => {
+      .userAuthentication(environment.username, environment.password)
+      .then(async (response) => {
         if (response.success) {
           this.storeTokenAndStartTimer(response.data.user, response.data.token);
           this.getAllProduct();
@@ -65,12 +67,14 @@ export class AppComponent implements OnInit {
   }
 
   public getToken(): string {
-    const jwtToken = localStorage.getItem('jwt_token');
-    return jwtToken ? JSON.parse(jwtToken).token : '';
+    let jwtToken = localStorage.getItem('jwt_token');
+    return (jwtToken = jwtToken ? JSON.parse(jwtToken).token : '');
   }
 
   public getBusinessID(): string {
-    const userDetails = localStorage.getItem('currentUser');
-    return userDetails ? JSON.parse(userDetails).token : '';
+    let userDetails = localStorage.getItem('currentUser');
+    return (userDetails = userDetails
+      ? JSON.parse(userDetails).businessID
+      : '');
   }
 }
