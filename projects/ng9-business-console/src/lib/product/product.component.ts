@@ -17,7 +17,6 @@ export class ProductComponent implements OnChanges {
   constructor() {}
 
   ngOnChanges(changes: import('@angular/core').SimpleChanges): void {
-    console.log('changes', changes);
     if (changes.products && changes.products.currentValue) {
       this.dataSource = new MatTableDataSource(this.products);
     }

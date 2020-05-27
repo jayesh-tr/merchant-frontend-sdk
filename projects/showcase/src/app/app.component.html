@@ -1,8 +1,14 @@
 <ng9-business-console-top-nav></ng9-business-console-top-nav>
 <ng9-business-console-footer></ng9-business-console-footer>
-<ng9-business-console-product 
-    [products]="data"
-    [displayedColumns]="columns"
+<ng9-business-console-product
+  [products]="data"
+  [displayedColumns]="columns"
+  *ngIf="!isError.status; else alertInfo"
 >
 </ng9-business-console-product>
+<ng-template #alertInfo>
+  <p>
+    {{ isError?.message }}
+  </p>
+</ng-template>
 <router-outlet></router-outlet>

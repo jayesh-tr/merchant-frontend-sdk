@@ -15,6 +15,9 @@ import { environment } from '../environments/environment';
 export class AppComponent implements OnInit {
   public data: Array<Datum>;
   public columns: Array<string>;
+  public isError: IErrorMessage = {
+    status: false,
+  };
 
   constructor(
     public productService: ProductService,
@@ -40,11 +43,18 @@ export class AppComponent implements OnInit {
           this.storeTokenAndStartTimer(response.data.user, response.data.token);
           this.getAllProduct();
         } else {
-          console.log('User not authenticate successfully');
+          this.isError = {
+            status: true,
+            message: 'Authentication failed!',
+          };
         }
       })
       .catch((error) => {
-        return error;
+        console.log(error);
+        this.isError = {
+          status: true,
+          message: error.error.message || error.error[0].message,
+        };
       });
   }
 
@@ -56,14 +66,21 @@ export class AppComponent implements OnInit {
   public getAllProduct() {
     this.productService
       .getProductList(this.getBusinessID(), this.getToken())
-      .subscribe((result: any) => {
-        const productData = result.data;
-        this.data =
-          result.success && productData && productData.length > 0
-            ? result.data
-            : [];
-        console.log('this.data', this.data);
-      });
+      .subscribe(
+        (result: any) => {
+          const productData = result.data;
+          this.data =
+            result.success && productData && productData.length > 0
+              ? result.data
+              : [];
+        },
+        (error) => {
+          this.isError = {
+            status: true,
+            message: error.error.message || error.error[0].message,
+          };
+        }
+      );
   }
 
   public getToken(): string {
@@ -77,4 +94,9 @@ export class AppComponent implements OnInit {
       ? JSON.parse(userDetails).businessID
       : '');
   }
+}
+
+export interface IErrorMessage {
+  status?: boolean;
+  message?: string;
 }
