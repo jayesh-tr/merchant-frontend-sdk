@@ -19,6 +19,7 @@
     "watch:ng9-business-console": "ng build ng9-business-console --watch",
     "client:showcase": "wait-on dist/ng9-business-console/public-api.d.ts --timeout 30000 && ng serve showcase -o --port 4200",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
+    "docs:serve": "compodoc -p ./tsconfig.json -n \"PumaPay Business Console SDK\" -s",
     "storybook": "npm run docs:json && start-storybook -p 6006 -s src/assets",
     "build-storybook": "wait-on dist/ng9-business-console/public-api.d.ts --timeout 30000 && build-storybook -c .storybook -o .story-books.out",
     "storybook:local-server": "wait-on .story-books.out --timeout 30000 && npx http-server .story-books.out"
