@@ -1,18 +1,18 @@
-import { TestBed, inject, async } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
 import { <%= classify(name) %>Service } from './<%= dasherize(name) %>.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('<%= classify(name) %>Service', () => {
-  let service: <%= classify(name) %>Service;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule(<% if(module) { %>{
-      providers: [<%= classify(name) %>Service]
-    }<% } else { %>{}<% } %>);
-    service = TestBed.inject(<%= classify(name) %>Service);
-  });
+describe('<%= classify(name) %> Service', () => {
+  
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      providers: [<%= classify(name) %>Service],
+      imports: [HttpClientTestingModule],
+    })
+  );
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(<%= classify(name) %>Service).toBeTruthy();
   });
 });
+
