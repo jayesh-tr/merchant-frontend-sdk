@@ -1,13 +1,4 @@
-import { storiesOf, moduleMetadata, addDecorator } from '@storybook/angular';
-import { MatTableModule } from '@angular/material/table';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { CdkTableModule } from '@angular/cdk/table';
-import { withA11y } from '@storybook/addon-a11y';
-import { array, withKnobs } from '@storybook/addon-knobs';
-import { CommonModule } from '@angular/common';
-import { ProductComponent } from '../../projects/ng9-business-console/src/lib/components/product/product.component';
-
-const mockProductData = [
+export default [
   {
     productID: 'cBvn45paZ7s63nK89CerAKzRfTz5A5Po',
     businessID: 'y2beEPTM49El0wXfAwRlzSRYzKcnIBD0',
@@ -239,50 +230,3 @@ const mockProductData = [
     status: 'inactive',
   },
 ];
-
-storiesOf('Product', module)
-  .addDecorator(
-    moduleMetadata({
-      declarations: [],
-      schemas: [NO_ERRORS_SCHEMA],
-      imports: [CdkTableModule, CommonModule, MatTableModule],
-    })
-  )
-  .addDecorator(withKnobs)
-  .addDecorator(withA11y)
-  .add('Empty Product', () => ({
-    component: ProductComponent,
-    props: {},
-  }))
-  .add('with product data', () => ({
-    component: ProductComponent,
-    props: {
-      products: mockProductData,
-      displayedColumns: [
-        'status',
-        'productName',
-        'totalEarnings',
-        'activeCustomers',
-        'numOfBilling',
-        'ropstenNetworkOn',
-        'creationTimestamp',
-        'columnClicked',
-      ],
-    },
-  }))
-  .add('With Knobs', () => ({
-    component: ProductComponent,
-    props: {
-      products: array("Product's Array", []),
-      displayedColumns: [
-        'status',
-        'productName',
-        'totalEarnings',
-        'activeCustomers',
-        'numOfBilling',
-        'ropstenNetworkOn',
-        'creationTimestamp',
-        'columnClicked',
-      ],
-    },
-  }));

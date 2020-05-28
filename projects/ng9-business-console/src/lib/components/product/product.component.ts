@@ -9,10 +9,10 @@ import { Datum } from '../../models/product-model';
 })
 export class ProductComponent implements OnChanges {
   @Input()
-  products: Array<Datum> = [];
+  products: Datum[] = [];
 
   @Input()
-  displayedColumns: Array<string>;
+  displayedColumns: string[];
 
   public dataSource: any;
   constructor() {}
