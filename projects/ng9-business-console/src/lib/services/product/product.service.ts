@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { HttpResponse } from '../../models/authentication-model';
-import { constant } from '../../utils/config';
+import { constant } from '../../utils/server-config';
 
 @Injectable({
   providedIn: 'root',

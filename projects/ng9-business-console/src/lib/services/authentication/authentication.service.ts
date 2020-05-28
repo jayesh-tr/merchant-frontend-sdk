@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { HttpResponse } from '../../models/authentication-model';
-import { constant } from '../../utils/config';
+import { constant } from '../../utils/server-config';
 
 @Injectable({
   providedIn: 'root',
