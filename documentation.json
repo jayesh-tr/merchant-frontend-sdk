@@ -1316,9 +1316,9 @@
         "name": "config",
         "ctype": "miscellaneous",
         "subtype": "variable",
-        "file": "src/stories/product-table/helper.ts",
+        "file": "src/stories/product-table/config.ts",
         "type": "object",
-        "defaultValue": "{\n  title: 'Product table',\n  component: ProductComponent,\n  decorators: [\n    withKnobs,\n    withA11y,\n    moduleMetadata({\n      imports: [CdkTableModule, CommonModule, MatTableModule]\n    })\n  ],\n}"
+        "defaultValue": "{\n  title: 'Product table',\n  component: ProductComponent,\n  decorators: [\n    withKnobs,\n    withA11y,\n    moduleMetadata({\n      imports: [CdkTableModule, CommonModule, MatTableModule],\n    }),\n  ],\n}"
       },
       {
         "name": "constant",
@@ -1417,14 +1417,14 @@
     "typealiases": [],
     "enumerations": [],
     "groupedVariables": {
-      "src/stories/product-table/helper.ts": [
+      "src/stories/product-table/config.ts": [
         {
           "name": "config",
           "ctype": "miscellaneous",
           "subtype": "variable",
-          "file": "src/stories/product-table/helper.ts",
+          "file": "src/stories/product-table/config.ts",
           "type": "object",
-          "defaultValue": "{\n  title: 'Product table',\n  component: ProductComponent,\n  decorators: [\n    withKnobs,\n    withA11y,\n    moduleMetadata({\n      imports: [CdkTableModule, CommonModule, MatTableModule]\n    })\n  ],\n}"
+          "defaultValue": "{\n  title: 'Product table',\n  component: ProductComponent,\n  decorators: [\n    withKnobs,\n    withA11y,\n    moduleMetadata({\n      imports: [CdkTableModule, CommonModule, MatTableModule],\n    }),\n  ],\n}"
         }
       ],
       "projects/ng9-business-console/src/lib/utils/server-config.ts": [
@@ -1752,7 +1752,7 @@
         "status": "low"
       },
       {
-        "filePath": "src/stories/product-table/helper.ts",
+        "filePath": "src/stories/product-table/config.ts",
         "type": "variable",
         "linktype": "miscellaneous",
         "linksubtype": "variable",
