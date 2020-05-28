@@ -9,10 +9,9 @@ describe('ProductComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductComponent ],
-      imports: [MatTableModule]
-    })
-    .compileComponents();
+      declarations: [ProductComponent],
+      imports: [MatTableModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

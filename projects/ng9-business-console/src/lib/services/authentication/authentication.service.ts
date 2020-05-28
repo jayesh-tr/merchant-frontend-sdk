@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { HttpResponse } from '../../models/authentication-model';
+import { constant } from '../../utils/config';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +11,7 @@ export class AuthenticationService {
   public actionUrl: string;
 
   public constructor(private http: HttpClient) {
-    this.actionUrl = `http://localhost:3000/api/v2/open-auth/login`;
+    this.actionUrl = `${constant.socketUrl}${constant.openApiPrefix}login`;
   }
 
   public userAuthentication(email: string, password: string): Promise<any> {
@@ -33,37 +35,4 @@ export class AuthenticationService {
 
     return headers;
   }
-}
-
-export interface User {
-  userID: string;
-  username: string;
-  fullName: string;
-  mobileNumber: string;
-  salt: string;
-  hash: string;
-  temporatySalt: string;
-  temporaryHash: string;
-  email: string;
-  completedRegistration: string;
-  registrationDate: number;
-  groupID: string;
-  lockoutCounter: number;
-  louckoutYN: boolean;
-  verified: boolean;
-  acceptedTermsAndConditions: boolean;
-  onBoardingCompleted: boolean;
-  businessID: string;
-}
-
-export class HttpResponse {
-  success: boolean;
-  status: string;
-  message: string;
-  sessionID?: string;
-  data?: any;
-  token?: string;
-  error?: string;
-  user?: User;
-  errcode?: string;
 }

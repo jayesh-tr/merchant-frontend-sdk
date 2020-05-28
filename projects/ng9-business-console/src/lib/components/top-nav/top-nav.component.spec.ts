@@ -10,10 +10,9 @@ describe('TopNavComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopNavComponent ],
-      imports: [MatMenuModule, MatToolbarModule]
-    })
-    .compileComponents();
+      declarations: [TopNavComponent],
+      imports: [MatMenuModule, MatToolbarModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

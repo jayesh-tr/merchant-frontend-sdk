@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Datum } from '../../models/product-model';
 
 @Component({
   selector: 'ng9-business-console-product',
@@ -8,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ProductComponent implements OnChanges {
   @Input()
-  products: Array<object> = [];
+  products: Array<Datum> = [];
 
   @Input()
   displayedColumns: Array<string>;
