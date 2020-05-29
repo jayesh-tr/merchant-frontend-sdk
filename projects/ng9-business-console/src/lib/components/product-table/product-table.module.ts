@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../material.module';
 import { ProductService } from '../../services/product/product.service';
-import { ProductComponent } from './product.component';
+import { ProductTableComponent } from './product-table.component';
 
 @NgModule({
-  declarations: [ProductComponent],
+  declarations: [ProductTableComponent],
   imports: [CommonModule, MaterialModule],
-  exports: [ProductComponent],
+  exports: [ProductTableComponent],
   providers: [ProductService],
 })
-export class ProductModule {}
+export class ProductTableModule {}

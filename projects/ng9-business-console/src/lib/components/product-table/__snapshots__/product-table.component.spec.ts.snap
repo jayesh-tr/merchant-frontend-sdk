@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProductComponent should create 1`] = `
+exports[`ProductTableComponent should create 1`] = `
 <ng9-business-console-product
   products={[Function Array]}
 >

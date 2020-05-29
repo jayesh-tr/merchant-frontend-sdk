@@ -3,12 +3,12 @@
  */
 
 export * from './lib/ng9-business-console.module';
-export * from './lib/components/product/product.module';
+export * from './lib/components/product-table/product-table.module';
 export * from './lib/components/footer/footer.module';
 // components
 export * from './lib/components/footer/footer.component';
 export * from './lib/components/top-nav/top-nav.component';
-export * from './lib/components/product/product.component';
+export * from './lib/components/product-table/product-table.component';
 export * from './lib/services/product/product.service';
 export * from './lib/services/footer/footer.service';
 export * from './lib/services/authentication/authentication.service';

@@ -53,7 +53,9 @@ export class AppComponent implements OnInit {
         console.log(error);
         this.isError = {
           status: true,
-          message: 'Invalid email/password OR might be server not found!',
+          message: error.error.message
+            ? error.error.message
+            : 'Invalid email/password OR might be server not found!',
         };
       });
   }

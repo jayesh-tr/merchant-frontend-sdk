@@ -155,24 +155,24 @@
     },
     {
       "name": "IErrorMessage",
-      "id": "interface-IErrorMessage-f6bd60e2e676cf2d219e0442c60a0617",
+      "id": "interface-IErrorMessage-5dba62f28a1f101092c7ca771f57cec4",
       "file": "projects/showcase/src/app/app.component.ts",
       "type": "interface",
-      "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {\n  ProductService,\n  Datum,\n  AuthenticationService,\n  User,\n} from '@ng9/business-console';\nimport { environment } from '../environments/environment';\n\n@Component({\n  selector: 'showcase-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent implements OnInit {\n  public data: Array<Datum>;\n  public columns: Array<string>;\n  public isError: IErrorMessage = {\n    status: false,\n  };\n\n  constructor(\n    public productService: ProductService,\n    public authenticationService: AuthenticationService\n  ) {\n    this.columns = [\n      'status',\n      'productName',\n      'totalEarnings',\n      'activeCustomers',\n      'numOfBilling',\n      'ropstenNetworkOn',\n      'creationTimestamp',\n      'columnClicked',\n    ];\n  }\n\n  ngOnInit(): void {\n    this.authenticationService\n      .userAuthentication(environment.username, environment.password)\n      .then(async (response) => {\n        if (response.success) {\n          this.storeTokenAndStartTimer(response.data.user, response.data.token);\n          this.getAllProduct();\n        } else {\n          this.isError = {\n            status: true,\n            message: 'Authentication failed!',\n          };\n        }\n      })\n      .catch((error) => {\n        console.log(error);\n        this.isError = {\n          status: true,\n          message: 'Invalid email/password OR might be server not found!',\n        };\n      });\n  }\n\n  public storeTokenAndStartTimer(user: User, token: string) {\n    localStorage.setItem('jwt_token', JSON.stringify({ token }));\n    localStorage.setItem('currentUser', JSON.stringify(user));\n  }\n\n  public getAllProduct() {\n    this.productService\n      .getProductList(this.getBusinessID(), this.getToken())\n      .subscribe(\n        (result: any) => {\n          const productData = result.data;\n          this.data =\n            result.success && productData && productData.length > 0\n              ? result.data\n              : [];\n        },\n        (error) => {\n          this.isError = {\n            status: true,\n            message: error.error.message || error.error[0].message,\n          };\n        }\n      );\n  }\n\n  public getToken(): string {\n    let jwtToken = localStorage.getItem('jwt_token');\n    return (jwtToken = jwtToken ? JSON.parse(jwtToken).token : '');\n  }\n\n  public getBusinessID(): string {\n    let userDetails = localStorage.getItem('currentUser');\n    return (userDetails = userDetails\n      ? JSON.parse(userDetails).businessID\n      : '');\n  }\n}\n\nexport interface IErrorMessage {\n  status?: boolean;\n  message?: string;\n}\n",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {\n  ProductService,\n  Datum,\n  AuthenticationService,\n  User,\n} from '@ng9/business-console';\nimport { environment } from '../environments/environment';\n\n@Component({\n  selector: 'showcase-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent implements OnInit {\n  public data: Array<Datum>;\n  public columns: Array<string>;\n  public isError: IErrorMessage = {\n    status: false,\n  };\n\n  constructor(\n    public productService: ProductService,\n    public authenticationService: AuthenticationService\n  ) {\n    this.columns = [\n      'status',\n      'productName',\n      'totalEarnings',\n      'activeCustomers',\n      'numOfBilling',\n      'ropstenNetworkOn',\n      'creationTimestamp',\n      'columnClicked',\n    ];\n  }\n\n  ngOnInit(): void {\n    this.authenticationService\n      .userAuthentication(environment.username, environment.password)\n      .then(async (response) => {\n        if (response.success) {\n          this.storeTokenAndStartTimer(response.data.user, response.data.token);\n          this.getAllProduct();\n        } else {\n          this.isError = {\n            status: true,\n            message: 'Authentication failed!',\n          };\n        }\n      })\n      .catch((error) => {\n        console.log(error);\n        this.isError = {\n          status: true,\n          message: (error.error.message)\n            ? error.error.message\n            : 'Invalid email/password OR might be server not found!',\n        };\n      });\n  }\n\n  public storeTokenAndStartTimer(user: User, token: string) {\n    localStorage.setItem('jwt_token', JSON.stringify({ token }));\n    localStorage.setItem('currentUser', JSON.stringify(user));\n  }\n\n  public getAllProduct() {\n    this.productService\n      .getProductList(this.getBusinessID(), this.getToken())\n      .subscribe(\n        (result: any) => {\n          const productData = result.data;\n          this.data =\n            result.success && productData && productData.length > 0\n              ? result.data\n              : [];\n        },\n        (error) => {\n          this.isError = {\n            status: true,\n            message: error.error.message || error.error[0].message,\n          };\n        }\n      );\n  }\n\n  public getToken(): string {\n    let jwtToken = localStorage.getItem('jwt_token');\n    return (jwtToken = jwtToken ? JSON.parse(jwtToken).token : '');\n  }\n\n  public getBusinessID(): string {\n    let userDetails = localStorage.getItem('currentUser');\n    return (userDetails = userDetails\n      ? JSON.parse(userDetails).businessID\n      : '');\n  }\n}\n\nexport interface IErrorMessage {\n  status?: boolean;\n  message?: string;\n}\n",
       "properties": [
         {
           "name": "message",
           "type": "string",
           "optional": true,
           "description": "",
-          "line": 101
+          "line": 103
         },
         {
           "name": "status",
           "type": "boolean",
           "optional": true,
           "description": "",
-          "line": 100
+          "line": 102
         }
       ],
       "indexSignatures": [],
@@ -692,7 +692,7 @@
   "components": [
     {
       "name": "AppComponent",
-      "id": "component-AppComponent-f6bd60e2e676cf2d219e0442c60a0617",
+      "id": "component-AppComponent-5dba62f28a1f101092c7ca771f57cec4",
       "file": "projects/showcase/src/app/app.component.ts",
       "encapsulation": [],
       "entryComponents": [],
@@ -756,7 +756,7 @@
           "optional": false,
           "returnType": "void",
           "typeParameters": [],
-          "line": 66,
+          "line": 68,
           "modifierKind": [114]
         },
         {
@@ -765,7 +765,7 @@
           "optional": false,
           "returnType": "string",
           "typeParameters": [],
-          "line": 91,
+          "line": 93,
           "modifierKind": [114]
         },
         {
@@ -774,7 +774,7 @@
           "optional": false,
           "returnType": "string",
           "typeParameters": [],
-          "line": 86,
+          "line": 88,
           "modifierKind": [114]
         },
         {
@@ -800,7 +800,7 @@
           "optional": false,
           "returnType": "void",
           "typeParameters": [],
-          "line": 61,
+          "line": 63,
           "modifierKind": [114],
           "jsdoctags": [
             {
@@ -825,7 +825,7 @@
       "description": "",
       "rawdescription": "",
       "type": "component",
-      "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {\n  ProductService,\n  Datum,\n  AuthenticationService,\n  User,\n} from '@ng9/business-console';\nimport { environment } from '../environments/environment';\n\n@Component({\n  selector: 'showcase-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent implements OnInit {\n  public data: Array<Datum>;\n  public columns: Array<string>;\n  public isError: IErrorMessage = {\n    status: false,\n  };\n\n  constructor(\n    public productService: ProductService,\n    public authenticationService: AuthenticationService\n  ) {\n    this.columns = [\n      'status',\n      'productName',\n      'totalEarnings',\n      'activeCustomers',\n      'numOfBilling',\n      'ropstenNetworkOn',\n      'creationTimestamp',\n      'columnClicked',\n    ];\n  }\n\n  ngOnInit(): void {\n    this.authenticationService\n      .userAuthentication(environment.username, environment.password)\n      .then(async (response) => {\n        if (response.success) {\n          this.storeTokenAndStartTimer(response.data.user, response.data.token);\n          this.getAllProduct();\n        } else {\n          this.isError = {\n            status: true,\n            message: 'Authentication failed!',\n          };\n        }\n      })\n      .catch((error) => {\n        console.log(error);\n        this.isError = {\n          status: true,\n          message: 'Invalid email/password OR might be server not found!',\n        };\n      });\n  }\n\n  public storeTokenAndStartTimer(user: User, token: string) {\n    localStorage.setItem('jwt_token', JSON.stringify({ token }));\n    localStorage.setItem('currentUser', JSON.stringify(user));\n  }\n\n  public getAllProduct() {\n    this.productService\n      .getProductList(this.getBusinessID(), this.getToken())\n      .subscribe(\n        (result: any) => {\n          const productData = result.data;\n          this.data =\n            result.success && productData && productData.length > 0\n              ? result.data\n              : [];\n        },\n        (error) => {\n          this.isError = {\n            status: true,\n            message: error.error.message || error.error[0].message,\n          };\n        }\n      );\n  }\n\n  public getToken(): string {\n    let jwtToken = localStorage.getItem('jwt_token');\n    return (jwtToken = jwtToken ? JSON.parse(jwtToken).token : '');\n  }\n\n  public getBusinessID(): string {\n    let userDetails = localStorage.getItem('currentUser');\n    return (userDetails = userDetails\n      ? JSON.parse(userDetails).businessID\n      : '');\n  }\n}\n\nexport interface IErrorMessage {\n  status?: boolean;\n  message?: string;\n}\n",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {\n  ProductService,\n  Datum,\n  AuthenticationService,\n  User,\n} from '@ng9/business-console';\nimport { environment } from '../environments/environment';\n\n@Component({\n  selector: 'showcase-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent implements OnInit {\n  public data: Array<Datum>;\n  public columns: Array<string>;\n  public isError: IErrorMessage = {\n    status: false,\n  };\n\n  constructor(\n    public productService: ProductService,\n    public authenticationService: AuthenticationService\n  ) {\n    this.columns = [\n      'status',\n      'productName',\n      'totalEarnings',\n      'activeCustomers',\n      'numOfBilling',\n      'ropstenNetworkOn',\n      'creationTimestamp',\n      'columnClicked',\n    ];\n  }\n\n  ngOnInit(): void {\n    this.authenticationService\n      .userAuthentication(environment.username, environment.password)\n      .then(async (response) => {\n        if (response.success) {\n          this.storeTokenAndStartTimer(response.data.user, response.data.token);\n          this.getAllProduct();\n        } else {\n          this.isError = {\n            status: true,\n            message: 'Authentication failed!',\n          };\n        }\n      })\n      .catch((error) => {\n        console.log(error);\n        this.isError = {\n          status: true,\n          message: (error.error.message)\n            ? error.error.message\n            : 'Invalid email/password OR might be server not found!',\n        };\n      });\n  }\n\n  public storeTokenAndStartTimer(user: User, token: string) {\n    localStorage.setItem('jwt_token', JSON.stringify({ token }));\n    localStorage.setItem('currentUser', JSON.stringify(user));\n  }\n\n  public getAllProduct() {\n    this.productService\n      .getProductList(this.getBusinessID(), this.getToken())\n      .subscribe(\n        (result: any) => {\n          const productData = result.data;\n          this.data =\n            result.success && productData && productData.length > 0\n              ? result.data\n              : [];\n        },\n        (error) => {\n          this.isError = {\n            status: true,\n            message: error.error.message || error.error[0].message,\n          };\n        }\n      );\n  }\n\n  public getToken(): string {\n    let jwtToken = localStorage.getItem('jwt_token');\n    return (jwtToken = jwtToken ? JSON.parse(jwtToken).token : '');\n  }\n\n  public getBusinessID(): string {\n    let userDetails = localStorage.getItem('currentUser');\n    return (userDetails = userDetails\n      ? JSON.parse(userDetails).businessID\n      : '');\n  }\n}\n\nexport interface IErrorMessage {\n  status?: boolean;\n  message?: string;\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {
@@ -928,18 +928,18 @@
       "templateData": "<h3>{{ title }}</h3>\n"
     },
     {
-      "name": "ProductComponent",
-      "id": "component-ProductComponent-83ce2f4581fc160dc3c83ac6988d1dc6",
-      "file": "projects/ng9-business-console/src/lib/components/product/product.component.ts",
+      "name": "ProductTableComponent",
+      "id": "component-ProductTableComponent-0fcd3179c4f538d592dde7ef6730bd95",
+      "file": "projects/ng9-business-console/src/lib/components/product-table/product-table.component.ts",
       "encapsulation": [],
       "entryComponents": [],
       "inputs": [],
       "outputs": [],
       "providers": [],
       "selector": "ng9-business-console-product",
-      "styleUrls": ["./product.component.scss"],
+      "styleUrls": ["./product-table.component.scss"],
       "styles": [],
-      "templateUrl": ["./product.component.html"],
+      "templateUrl": ["./product-table.component.html"],
       "viewProviders": [],
       "inputsClass": [
         {
@@ -994,12 +994,12 @@
       "description": "",
       "rawdescription": "",
       "type": "component",
-      "sourceCode": "import { Component, OnInit, Input, OnChanges } from '@angular/core';\nimport { MatTableDataSource } from '@angular/material/table';\nimport { Datum } from '../../models/product-model';\n\n@Component({\n  selector: 'ng9-business-console-product',\n  templateUrl: './product.component.html',\n  styleUrls: ['./product.component.scss'],\n})\nexport class ProductComponent implements OnChanges {\n  @Input()\n  products: Datum[] = [];\n\n  @Input()\n  displayedColumns: string[];\n\n  public dataSource: any;\n  constructor() {}\n\n  ngOnChanges(changes: import('@angular/core').SimpleChanges): void {\n    if (changes.products && changes.products.currentValue) {\n      this.dataSource = new MatTableDataSource(this.products);\n    }\n  }\n}\n",
+      "sourceCode": "import { Component, OnInit, Input, OnChanges } from '@angular/core';\nimport { MatTableDataSource } from '@angular/material/table';\nimport { Datum } from '../../models/product-model';\n\n@Component({\n  selector: 'ng9-business-console-product',\n  templateUrl: './product-table.component.html',\n  styleUrls: ['./product-table.component.scss'],\n})\nexport class ProductTableComponent implements OnChanges {\n  @Input()\n  products: Datum[] = [];\n\n  @Input()\n  displayedColumns: string[];\n\n  public dataSource: any;\n  constructor() {}\n\n  ngOnChanges(changes: import('@angular/core').SimpleChanges): void {\n    if (changes.products && changes.products.currentValue) {\n      this.dataSource = new MatTableDataSource(this.products);\n    }\n  }\n}\n",
       "assetsDirs": [],
       "styleUrlsData": [
         {
           "data": ".main-container {\n  background-color: #fff;\n  border-radius: 10px;\n  border-width: 1px;\n  padding: 0px;\n  padding-bottom: 50px;\n  margin-bottom: 100px;\n  min-height: 70%;\n\n  h3,\n  h4 {\n    display: inline;\n    font-size: 18px;\n  }\n\n  .bm-header {\n    border-bottom: 1px solid #f2f2f2;\n  }\n\n  .bm-header-col {\n    padding-right: 20px;\n    padding-left: 13px;\n  }\n\n  .row-margin-top {\n    margin-top: 50px;\n  }\n\n  .row-table {\n    // overflow-x: scroll;\n    padding: 0 !important;\n  }\n\n  .row-padding {\n    padding-left: 3.2%;\n    padding-right: 3%;\n    padding-top: 15px;\n    padding-bottom: 5px;\n    margin-right: 0px;\n    margin-left: 0px;\n  }\n\n  .col-centered {\n    padding-left: 0px;\n    padding-right: 0px;\n    text-align: center;\n  }\n}\n\ntr:hover {\n  background-color: #dfe8fb;\n  cursor: pointer;\n  font-weight: 600;\n}\n\ntd {\n  font-weight: none !important;\n}\n\n@media only screen and (min-width: 1920px) {\n  .productHeading span {\n    padding-left: 70px;\n  }\n\n  .balance-container-white {\n    left: 55% !important;\n  }\n\n  .info-message:hover .balance-container-white {\n    line-height: 1.3;\n    padding-top: 7px;\n  }\n}\n\n.thead {\n  background: #ffffff;\n}\n\ntable {\n  border-bottom: 1px solid #e3ebf3;\n}\n\n.table td {\n  padding: 1rem;\n}\n\n.trHeader:hover {\n  background: none !important;\n}\n\n@media only screen and (max-width: 768px) {\n  .main-container {\n    .row-table {\n      margin-right: 10px;\n      margin-left: 10px;\n    }\n  }\n}\n\n////////////// table css //////////////\ntable {\n  width: 100%;\n}\n\ntd,\nth {\n  border: #e2e3e6;\n}\n\n.test-indicator {\n  width: 90%;\n  height: 60%;\n  text-align: right;\n  background-color: #ffefe9;\n  color: #f97841;\n  text-align: center;\n  font-size: 13px;\n  float: right;\n  margin-top: 8px;\n  padding-top: 3px;\n  padding-bottom: 3px;\n  padding-left: 30px;\n  padding-right: 30px;\n  border-radius: 3px;\n}\n\n.active-product,\n.testing-product,\n.inactive-product,\n.expired-product {\n  font-size: 8px;\n}\n\n.mat-sort-header-button,\n.mat-row.ng-star-inserted {\n  margin: 0 auto;\n  text-align: center;\n}\n\n.mat-column-productName > .mat-sort-header-container {\n  text-align: center;\n}\n\n.no-product {\n  text-align: center;\n  margin-top: 55px;\n}\n\n.mat-column-productName {\n  text-align: center;\n  font-size: 13px;\n}\n\ntable th td {\n  text-align: center;\n  vertical-align: middle;\n}\n\n::ng-deep .product-table .mat-header-cell .mat-sort-header-container {\n  justify-content: center;\n  padding: 16px;\n}\n\n::ng-deep .product-table .mat-cell {\n  padding: 0 12px 0 0;\n}\n\ntable thead th {\n  border-bottom: 1px solid #e3ebf3;\n}\n",
-          "styleUrl": "./product.component.scss"
+          "styleUrl": "./product-table.component.scss"
         }
       ],
       "stylesData": "",
@@ -1236,7 +1236,7 @@
               "name": "MaterialModule"
             },
             {
-              "name": "ProductModule"
+              "name": "ProductTableModule"
             }
           ]
         },
@@ -1247,7 +1247,7 @@
               "name": "FooterComponent"
             },
             {
-              "name": "ProductComponent"
+              "name": "ProductTableComponent"
             },
             {
               "name": "TopNavComponent"
@@ -1265,7 +1265,7 @@
       ]
     },
     {
-      "name": "ProductModule",
+      "name": "ProductTableModule",
       "children": [
         {
           "type": "providers",
@@ -1279,7 +1279,7 @@
           "type": "declarations",
           "elements": [
             {
-              "name": "ProductComponent"
+              "name": "ProductTableComponent"
             }
           ]
         },
@@ -1295,7 +1295,7 @@
           "type": "exports",
           "elements": [
             {
-              "name": "ProductComponent"
+              "name": "ProductTableComponent"
             }
           ]
         },
@@ -1318,7 +1318,7 @@
         "subtype": "variable",
         "file": "src/stories/product-table/config.ts",
         "type": "object",
-        "defaultValue": "{\n  title: 'Product table',\n  component: ProductComponent,\n  decorators: [\n    withKnobs,\n    withA11y,\n    moduleMetadata({\n      imports: [CdkTableModule, CommonModule, MatTableModule],\n    }),\n  ],\n}"
+        "defaultValue": "{\n  title: 'Product table',\n  component: ProductTableComponent,\n  decorators: [\n    withKnobs,\n    withA11y,\n    moduleMetadata({\n      imports: [CdkTableModule, CommonModule, MatTableModule],\n    }),\n  ],\n}"
       },
       {
         "name": "constant",
@@ -1424,7 +1424,7 @@
           "subtype": "variable",
           "file": "src/stories/product-table/config.ts",
           "type": "object",
-          "defaultValue": "{\n  title: 'Product table',\n  component: ProductComponent,\n  decorators: [\n    withKnobs,\n    withA11y,\n    moduleMetadata({\n      imports: [CdkTableModule, CommonModule, MatTableModule],\n    }),\n  ],\n}"
+          "defaultValue": "{\n  title: 'Product table',\n  component: ProductTableComponent,\n  decorators: [\n    withKnobs,\n    withA11y,\n    moduleMetadata({\n      imports: [CdkTableModule, CommonModule, MatTableModule],\n    }),\n  ],\n}"
         }
       ],
       "projects/ng9-business-console/src/lib/utils/server-config.ts": [
@@ -1603,10 +1603,10 @@
         "status": "low"
       },
       {
-        "filePath": "projects/ng9-business-console/src/lib/components/product/product.component.ts",
+        "filePath": "projects/ng9-business-console/src/lib/components/product-table/product-table.component.ts",
         "type": "component",
         "linktype": "component",
-        "name": "ProductComponent",
+        "name": "ProductTableComponent",
         "coveragePercent": 0,
         "coverageCount": "0/6",
         "status": "low"
