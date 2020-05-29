@@ -4,10 +4,10 @@ import { Datum } from '../../models/product-model';
 
 @Component({
   selector: 'ng9-business-console-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss'],
+  templateUrl: './product-table.component.html',
+  styleUrls: ['./product-table.component.scss'],
 })
-export class ProductComponent implements OnChanges {
+export class ProductTableComponent implements OnChanges {
   @Input()
   products: Datum[] = [];
 

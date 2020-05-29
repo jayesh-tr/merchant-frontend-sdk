@@ -10,7 +10,7 @@
     "test:update": "jest --updateSnapshot",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist && rimraf .story-books.out",
     "ng9-business-console:build": "ng build ng9-business-console && npm i dist/ng9-business-console --save-optional",
     "library:build": "npm run ng9-business-console:build",
     "schematic:build": "npm run library:build && cd projects/ng9-business-console && npm run build",
