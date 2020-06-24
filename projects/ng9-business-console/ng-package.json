@@ -3,5 +3,6 @@
   "dest": "../../dist/ng9-business-console",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": ["@angular/cdk", "@angular/material"]
 }
